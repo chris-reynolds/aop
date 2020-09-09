@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="75c285f2-1f47-4dc9-99b4-c789f8c9d94c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/aopclient/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_1024.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_128.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_256.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/DebugProfile.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/DebugProfile.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Release.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Release.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Android_Wear_Square_API_23" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/aopclient" />
+  </component>
+  <component name="ProjectId" id="1fODZpgDAjF0iFgrchysHbrTPDX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/aopclient/lib/utils" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/aopclient/lib/utils" />
+      <recent name="$PROJECT_DIR$/aopsync/assets" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Dart Command Line App.aopserve.dart">
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="aopserve.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" temporary="true" nameIsGenerated="true">
+      <option name="arguments" value="bin/devConfig.json" />
+      <option name="filePath" value="$PROJECT_DIR$/aopserve/bin/aopserve.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/aopserve" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aopclient" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/aopclient/lib/aopAppMain.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="aopsync" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/aopsync/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Dart Command Line App.aopserve.dart" />
+      <item itemvalue="Flutter.aopclient" />
+      <item itemvalue="Flutter.aopsync" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Command Line App.aopserve.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75c285f2-1f47-4dc9-99b4-c789f8c9d94c" name="Default Changelist" comment="" />
+      <created>1596080304187</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596080304187</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/aopclient/aopclient" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="471" y="187" width="614" height="559" key="#aopserve.dart" timestamp="1597978937710">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="471" y="187" width="614" height="559" key="#aopserve.dart/0.23.1920.1003@0.23.1920.1003" timestamp="1597978937710" />
+    <state x="336" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599023276091">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="336" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599023276091" />
+    <state x="501" y="268" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597980210111">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="501" y="268" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1003@0.23.1920.1003" timestamp="1597980210111" />
+    <state x="609" y="324" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1598473321046">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="609" y="324" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1598473321046" />
+    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1599270078990">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599270078990" />
+    <state x="533" y="278" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599457433134">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="533" y="278" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599457433134" />
+    <state width="636" height="466" key="DebuggerActiveHint" timestamp="1599458062235">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="636" height="466" key="DebuggerActiveHint/0.23.1920.1003@0.23.1920.1003" timestamp="1599458062235" />
+    <state width="1280" height="393" key="GridCell.Tab.0.bottom" timestamp="1599459071332">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="1280" height="293" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1597800351306" />
+    <state width="1280" height="393" key="GridCell.Tab.0.bottom/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071332" />
+    <state width="1280" height="393" key="GridCell.Tab.0.center" timestamp="1599459071331">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="1280" height="293" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1597800351305" />
+    <state width="1280" height="393" key="GridCell.Tab.0.center/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071331" />
+    <state width="1280" height="393" key="GridCell.Tab.0.left" timestamp="1599459071331">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="1280" height="293" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1597800351305" />
+    <state width="1280" height="393" key="GridCell.Tab.0.left/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071331" />
+    <state width="1280" height="393" key="GridCell.Tab.0.right" timestamp="1599459071332">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="1280" height="293" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1597800351306" />
+    <state width="1280" height="393" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071332" />
+    <state x="288" y="320" key="IDE.errors.dialog" timestamp="1599112545168">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="288" y="320" key="IDE.errors.dialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599112545168" />
+    <state x="373" y="166" key="SettingsEditor" timestamp="1598426739698">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="373" y="166" key="SettingsEditor/0.23.1920.1003@0.23.1920.1003" timestamp="1598426739698" />
+    <state x="370" y="123" width="540" height="524" key="StructurePopup" timestamp="1597800075192">
+      <screen x="0" y="23" width="1280" height="723" />
+    </state>
+    <state x="370" y="123" width="540" height="524" key="StructurePopup/0.23.1280.723@0.23.1280.723" timestamp="1597800075192" />
+    <state x="275" y="293" width="850" height="554" key="find.popup" timestamp="1598427766109">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="275" y="293" width="850" height="554" key="find.popup/0.23.1920.1003@0.23.1920.1003" timestamp="1598427766109" />
+    <state width="300" height="80" key="javadoc.popup.new" timestamp="1599458649606">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="300" height="58" key="javadoc.popup.new/0.23.1280.723@0.23.1280.723" timestamp="1597802961593" />
+    <state width="300" height="80" key="javadoc.popup.new/0.23.1920.1003@0.23.1920.1003" timestamp="1599458649606" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib/src/virtual_directory.dart</url>
+          <line>200</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib/src/virtual_directory.dart</url>
+          <line>270</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib/src/virtual_directory.dart</url>
+          <line>188</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_server-0.9.8+3/lib/src/virtual_directory.dart</url>
+          <line>193</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/aopserve/lib/aopServeMain.dart</url>
+          <line>54</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/aopserve/lib/SimpleRouter.dart</url>
+          <line>84</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/aopserve/lib/SimpleRouter.dart</url>
+          <line>87</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/aopserve/lib/SimpleRouter.dart</url>
+          <line>90</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/aopserve/bin/aopserve.dart</url>
+          <line>25</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="DartCommandLineRunConfigurationType">
+        <watch expression="response" language="Dart" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+name: aopserve
+publish_to: none
+authors:
+  -chris reynolds
+
+dependencies:
+#  angel_framework: ^2.0.0
+  http_server: ^0.9.8+3
+  path: #
+  exif: #
+  mysql1:
+    path: ../../mysql1_dart
+  aopcommon:
+    path: ../aopcommon
+
+dev_dependencies:
+  test: #

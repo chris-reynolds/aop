@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b429237b-6d4a-4eb1-89cf-a93e6fa9b7e8" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1fFsIibyLp03kIaDc47AlTKnxfD" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.project.structure.last.selected" value="SDK Location" />
+    <property name="android.project.structure.proportion" value="0.15" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="auto.test.manager.delay" value="1000" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests in aopcommon" type="DartTestRunConfigurationType" factoryName="Dart Test" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/aopcommon" />
+      <option name="scope" value="FOLDER" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Dart Test.tests in aopcommon" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b429237b-6d4a-4eb1-89cf-a93e6fa9b7e8" name="Default Changelist" comment="" />
+      <created>1595825097286</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595825097286</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596065224202">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="424" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1596065224202" />
+    <state x="697" y="321" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1596065222552">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="697" y="321" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1596065222552" />
+    <state width="960" height="271" key="GridCell.Tab.0.bottom" timestamp="1596063746713">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="960" height="271" key="GridCell.Tab.0.bottom/0.23.1920.1003@0.23.1920.1003" timestamp="1596063746713" />
+    <state width="960" height="271" key="GridCell.Tab.0.center" timestamp="1596063746712">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="960" height="271" key="GridCell.Tab.0.center/0.23.1920.1003@0.23.1920.1003" timestamp="1596063746712" />
+    <state width="960" height="271" key="GridCell.Tab.0.left" timestamp="1596063746712">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="960" height="271" key="GridCell.Tab.0.left/0.23.1920.1003@0.23.1920.1003" timestamp="1596063746712" />
+    <state width="960" height="271" key="GridCell.Tab.0.right" timestamp="1596063746713">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="960" height="271" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1596063746713" />
+    <state x="249" y="115" width="1440" height="677" key="dock-window-1" timestamp="1595895954992">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state x="249" y="115" width="1440" height="677" key="dock-window-1/0.23.1920.1003@0.23.1920.1003" timestamp="1595895954992" />
+    <state width="300" height="80" key="javadoc.popup.new" timestamp="1595898435687">
+      <screen x="0" y="23" width="1920" height="1003" />
+    </state>
+    <state width="300" height="80" key="javadoc.popup.new/0.23.1920.1003@0.23.1920.1003" timestamp="1595898435687" />
+  </component>
+</project>

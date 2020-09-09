@@ -1,0 +1,11 @@
+{
+	"webserver_port": "4444",
+	"fileserver_root": "../testdata",
+	"password.chris": "temp",
+	"password.janet": "temp",
+	"dbhost": "192.168.1.195",
+	"dbport": "3306",
+	"dbuser": "photos",
+	"dbpassword": "photos00",
+	"dbname": "allourphotos_dev"
+}
