@@ -8,8 +8,9 @@ import 'DomainObject.dart';
 import 'dart:math' as math;
 import 'package:path/path.dart' as Path;
 import 'package:aopcommon/aopcommon.dart';
-import '../utils/WebFile.dart';
+//import '../utils/WebFile.dart';
 
+String rootUrl = 'undefinedroot';
 //                                '*** End Custom Code
 
 // Domain object providers

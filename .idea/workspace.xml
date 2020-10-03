@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75c285f2-1f47-4dc9-99b4-c789f8c9d94c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
@@ -48,6 +50,7 @@
       <change beforePath="$PROJECT_DIR$/aopclient/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve/lib/db/aopClasses.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopserve/lib/db/aopClasses.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,10 +202,10 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state x="609" y="324" key="#com.intellij.ide.util.TreeFileChooserDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1598473321046" />
-    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1599270078990">
+    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601701335707">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
-    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599270078990" />
+    <state x="648" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1601701335707" />
     <state x="533" y="278" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599457433134">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
@@ -211,26 +214,26 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="636" height="466" key="DebuggerActiveHint/0.23.1920.1003@0.23.1920.1003" timestamp="1599458062235" />
-    <state width="1280" height="393" key="GridCell.Tab.0.bottom" timestamp="1599459071332">
-      <screen x="0" y="23" width="1920" height="1003" />
+    <state width="639" height="393" key="GridCell.Tab.0.bottom" timestamp="1599976545155">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
-    <state width="1280" height="293" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1597800351306" />
-    <state width="1280" height="393" key="GridCell.Tab.0.bottom/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071332" />
-    <state width="1280" height="393" key="GridCell.Tab.0.center" timestamp="1599459071331">
-      <screen x="0" y="23" width="1920" height="1003" />
+    <state width="639" height="393" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1599976545155" />
+    <state width="1686" height="393" key="GridCell.Tab.0.bottom/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
+    <state width="639" height="393" key="GridCell.Tab.0.center" timestamp="1599976545154">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
-    <state width="1280" height="293" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1597800351305" />
-    <state width="1280" height="393" key="GridCell.Tab.0.center/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071331" />
-    <state width="1280" height="393" key="GridCell.Tab.0.left" timestamp="1599459071331">
-      <screen x="0" y="23" width="1920" height="1003" />
+    <state width="639" height="393" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1599976545154" />
+    <state width="1686" height="393" key="GridCell.Tab.0.center/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
+    <state width="639" height="393" key="GridCell.Tab.0.left" timestamp="1599976545154">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
-    <state width="1280" height="293" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1597800351305" />
-    <state width="1280" height="393" key="GridCell.Tab.0.left/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071331" />
-    <state width="1280" height="393" key="GridCell.Tab.0.right" timestamp="1599459071332">
-      <screen x="0" y="23" width="1920" height="1003" />
+    <state width="639" height="393" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1599976545154" />
+    <state width="1686" height="393" key="GridCell.Tab.0.left/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547061" />
+    <state width="639" height="393" key="GridCell.Tab.0.right" timestamp="1599976545155">
+      <screen x="0" y="23" width="1280" height="723" />
     </state>
-    <state width="1280" height="293" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1597800351306" />
-    <state width="1280" height="393" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1599459071332" />
+    <state width="639" height="393" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1599976545155" />
+    <state width="1686" height="393" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
     <state x="288" y="320" key="IDE.errors.dialog" timestamp="1599112545168">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
