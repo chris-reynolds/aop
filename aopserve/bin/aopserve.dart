@@ -10,7 +10,7 @@ const rootDir = '../testdata';
 
 //LocalFileSystem fs = LocalFileSystem();
 
-Future<bool> fileDownload(String fileName,HttpResponse res) async {
+Future<bool> xfileDownload(String fileName,HttpResponse res) async {
   print('request $fileName');
   var file = File(fileName);
   if (!file.existsSync()) throw HttpException('not found');
@@ -40,9 +40,9 @@ void main(List<String> args)  {
 //   print('Started on ${http.server.port}');
 // }
 
-Future<bool> photoHandler(HttpRequest req, HttpResponse res) async {
+Future<bool> xphotoHandler(HttpRequest req, HttpResponse res) async {
   var fileName = '$rootDir/${req.uri.queryParameters["month"]}/${req.uri.queryParameters["imagename"]}';
-  return fileDownload(fileName, res);
+  return xfileDownload(fileName, res);
 } // of photoHandler
 
 
