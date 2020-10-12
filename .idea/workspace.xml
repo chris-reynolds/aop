@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="75c285f2-1f47-4dc9-99b4-c789f8c9d94c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
@@ -50,14 +53,29 @@
       <change beforePath="$PROJECT_DIR$/aopclient/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve/lib/db/aopClasses.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopserve/lib/db/aopClasses.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve/bin/aopserve.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopserve/bin/aopserve.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/aopserve.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/markdown-navigator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/markdown-navigator-enh.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/markdown-navigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/analysis_options.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/bin/aopserve.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/bin/devConfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopserve_shelf/pubspec.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Android_Wear_Square_API_23" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -72,7 +90,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -81,6 +98,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/aopclient/lib/utils" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -234,10 +252,10 @@
     </state>
     <state width="639" height="393" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1599976545155" />
     <state width="1686" height="393" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
-    <state x="288" y="320" key="IDE.errors.dialog" timestamp="1599112545168">
+    <state x="288" y="320" width="1247" height="500" key="IDE.errors.dialog" timestamp="1602540077345">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
-    <state x="288" y="320" key="IDE.errors.dialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599112545168" />
+    <state x="288" y="320" width="1247" height="500" key="IDE.errors.dialog/0.23.1920.1003@0.23.1920.1003" timestamp="1602540077345" />
     <state x="373" y="166" key="SettingsEditor" timestamp="1598426739698">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
@@ -250,11 +268,11 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state x="275" y="293" width="850" height="554" key="find.popup/0.23.1920.1003@0.23.1920.1003" timestamp="1598427766109" />
-    <state width="300" height="80" key="javadoc.popup.new" timestamp="1599458649606">
+    <state width="300" height="80" key="javadoc.popup.new" timestamp="1602540360321">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="300" height="58" key="javadoc.popup.new/0.23.1280.723@0.23.1280.723" timestamp="1597802961593" />
-    <state width="300" height="80" key="javadoc.popup.new/0.23.1920.1003@0.23.1920.1003" timestamp="1599458649606" />
+    <state width="300" height="80" key="javadoc.popup.new/0.23.1920.1003@0.23.1920.1003" timestamp="1602540360321" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
