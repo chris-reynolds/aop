@@ -21,7 +21,7 @@ Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
 //    actualFilename = Path.join((await getApplicationDocumentsDirectory()).path,actualFilename); todo restore
   if (!FileSystemEntity.isFileSync(actualFilename)) {
     log.message('Invalid configuration name $actualFilename');
-    config = <String,dynamic>{'dbhost':'127.0.0.1', 'dbname': 'allourphotos_dev', 'dbport': '3306'};
+    config = <String,dynamic>{'dbhost':'last1.local', 'dbname': 'allourphotos_dev', 'dbport': '3306'};
   } else {
     String configContents =
         File(actualFilename).readAsStringSync(encoding: utf8);
