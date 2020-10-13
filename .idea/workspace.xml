@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="75c285f2-1f47-4dc9-99b4-c789f8c9d94c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
@@ -32,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/ios/Runner/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/lib/main.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
@@ -46,6 +46,7 @@
       <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_512.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Assets.xcassets/AppIcon.appiconset/app_icon_64.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/DebugProfile.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/DebugProfile.entitlements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Info.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/macos/Runner/Release.entitlements" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/macos/Runner/Release.entitlements" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/pubspec.yaml" afterDir="false" />
@@ -53,22 +54,7 @@
       <change beforePath="$PROJECT_DIR$/aopclient/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-192.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/web/icons/Icon-512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve/bin/aopserve.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopserve/bin/aopserve.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/aopserve.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/markdown-navigator" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/markdown-navigator-enh.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/markdown-navigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/analysis_options.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/bin/aopserve.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/bin/devConfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/aopserve_shelf/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/aopcommon/lib/src/Config.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopcommon/lib/src/Config.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +79,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -111,7 +98,7 @@
       <recent name="$PROJECT_DIR$/aopsync/assets" />
     </key>
   </component>
-  <component name="RunManager" selected="Dart Command Line App.aopserve.dart">
+  <component name="RunManager" selected="Flutter.aopclient">
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -165,6 +152,10 @@
       <option name="filePath" value="$PROJECT_DIR$/aopsync/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <configuration name="tests in database_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/aopclient/test/database_test.dart" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -178,9 +169,11 @@
       <item itemvalue="Dart Command Line App.aopserve.dart" />
       <item itemvalue="Flutter.aopclient" />
       <item itemvalue="Flutter.aopsync" />
+      <item itemvalue="Flutter Test.tests in database_test.dart" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.tests in database_test.dart" />
         <item itemvalue="Dart Command Line App.aopserve.dart" />
       </list>
     </recent_temporary>
@@ -212,10 +205,10 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state x="336" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1003@0.23.1920.1003" timestamp="1599023276091" />
-    <state x="501" y="268" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597980210111">
+    <state x="501" y="268" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602540709455">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
-    <state x="501" y="268" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1003@0.23.1920.1003" timestamp="1597980210111" />
+    <state x="501" y="268" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1920.1003@0.23.1920.1003" timestamp="1602540709455" />
     <state x="609" y="324" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1598473321046">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
@@ -232,26 +225,26 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="636" height="466" key="DebuggerActiveHint/0.23.1920.1003@0.23.1920.1003" timestamp="1599458062235" />
-    <state width="639" height="393" key="GridCell.Tab.0.bottom" timestamp="1599976545155">
-      <screen x="0" y="23" width="1280" height="723" />
+    <state width="1520" height="269" key="GridCell.Tab.0.bottom" timestamp="1602563105567">
+      <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="639" height="393" key="GridCell.Tab.0.bottom/0.23.1280.723@0.23.1280.723" timestamp="1599976545155" />
-    <state width="1686" height="393" key="GridCell.Tab.0.bottom/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
-    <state width="639" height="393" key="GridCell.Tab.0.center" timestamp="1599976545154">
-      <screen x="0" y="23" width="1280" height="723" />
+    <state width="1520" height="269" key="GridCell.Tab.0.bottom/0.23.1920.1003@0.23.1920.1003" timestamp="1602563105567" />
+    <state width="1520" height="269" key="GridCell.Tab.0.center" timestamp="1602563105566">
+      <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="639" height="393" key="GridCell.Tab.0.center/0.23.1280.723@0.23.1280.723" timestamp="1599976545154" />
-    <state width="1686" height="393" key="GridCell.Tab.0.center/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
-    <state width="639" height="393" key="GridCell.Tab.0.left" timestamp="1599976545154">
-      <screen x="0" y="23" width="1280" height="723" />
+    <state width="1520" height="269" key="GridCell.Tab.0.center/0.23.1920.1003@0.23.1920.1003" timestamp="1602563105566" />
+    <state width="1520" height="269" key="GridCell.Tab.0.left" timestamp="1602563105566">
+      <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="639" height="393" key="GridCell.Tab.0.left/0.23.1280.723@0.23.1280.723" timestamp="1599976545154" />
-    <state width="1686" height="393" key="GridCell.Tab.0.left/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547061" />
-    <state width="639" height="393" key="GridCell.Tab.0.right" timestamp="1599976545155">
-      <screen x="0" y="23" width="1280" height="723" />
+    <state width="1520" height="269" key="GridCell.Tab.0.left/0.23.1920.1003@0.23.1920.1003" timestamp="1602563105566" />
+    <state width="1520" height="269" key="GridCell.Tab.0.right" timestamp="1602563105567">
+      <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="639" height="393" key="GridCell.Tab.0.right/0.23.1280.723@0.23.1280.723" timestamp="1599976545155" />
-    <state width="1686" height="393" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1599782547062" />
+    <state width="1520" height="269" key="GridCell.Tab.0.right/0.23.1920.1003@0.23.1920.1003" timestamp="1602563105567" />
     <state x="288" y="320" width="1247" height="500" key="IDE.errors.dialog" timestamp="1602540077345">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
@@ -268,11 +261,11 @@
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state x="275" y="293" width="850" height="554" key="find.popup/0.23.1920.1003@0.23.1920.1003" timestamp="1598427766109" />
-    <state width="300" height="80" key="javadoc.popup.new" timestamp="1602540360321">
+    <state width="300" height="80" key="javadoc.popup.new" timestamp="1602562914431">
       <screen x="0" y="23" width="1920" height="1003" />
     </state>
     <state width="300" height="58" key="javadoc.popup.new/0.23.1280.723@0.23.1280.723" timestamp="1597802961593" />
-    <state width="300" height="80" key="javadoc.popup.new/0.23.1920.1003@0.23.1920.1003" timestamp="1602540360321" />
+    <state width="300" height="80" key="javadoc.popup.new/0.23.1920.1003@0.23.1920.1003" timestamp="1602562914431" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
