@@ -13,10 +13,10 @@ class Route {
   String verb;
   List<String> route;
   SimpleRouteHandler handler;
+  bool selfClosing = false;
+  Route(this.verb, this.route, this.handler, {this.selfClosing =false});
 
-  Route(this.verb, this.route, this.handler);
-
-  Map<String, String> matches(String aVerb, List<String> url) {
+  Map<String, String>? matches(String aVerb, List<String> url) {
     if (aVerb != verb && verb != 'ANY') return null; // verb doesn't match
     if (route[0] == '*' && route.length == 1) return {}; // match everything
     if (route.length != url.length) return null; // match nothing
@@ -38,26 +38,34 @@ class Route {
 
 class SimpleRouter {
   var _routes = <Route>[];
-  SimpleRouteHandler onNoMatch;
-  SimpleRouteHandler onException;
-  SimpleRouteHandler onFinal;
+  SimpleRouteHandler? onNoMatch;
+  SimpleRouteHandler? onException;
+  SimpleRouteHandler? onFinal;
 
-  SimpleRouter addRoute(String verb, String url, SimpleRouteHandler handler) {
-    _routes.add(Route(verb, url.split('/'), handler));
+  Future<bool> closeResponse (HttpRequest req, Map<String, String> mask) async {
+    HttpResponse res = req.response;
+    res.cookies.addAll(req.cookies);
+    print('cookie length = ${res.cookies.length}');
+    res.close();
+    return true;
+  }
+
+  SimpleRouter addRoute(String verb, String url, SimpleRouteHandler handler,{selfClosing:false}) {
+    _routes.add(Route(verb, url.split('/'), handler,selfClosing: selfClosing));
     return this;
   }
 
-  SimpleRouter any(String url, SimpleRouteHandler handler) => addRoute('ANY', url, handler);
+  SimpleRouter any(String url, SimpleRouteHandler handler,{selfClosing:false}) => addRoute('ANY', url, handler,selfClosing: selfClosing);
 
-  SimpleRouter get(String url, SimpleRouteHandler handler) => addRoute('GET', url, handler);
+  SimpleRouter get(String url, SimpleRouteHandler handler,{selfClosing:false}) => addRoute('GET', url, handler,selfClosing: selfClosing);
 
-  SimpleRouter head(String url, SimpleRouteHandler handler) => addRoute('HEAD', url, handler);
+  SimpleRouter head(String url, SimpleRouteHandler handler,{selfClosing:false}) => addRoute('HEAD', url, handler,selfClosing: selfClosing);
 
-  SimpleRouter put(String url, SimpleRouteHandler handler) => addRoute('PUT', url, handler);
+  SimpleRouter put(String url, SimpleRouteHandler handler,{selfClosing:false}) => addRoute('PUT', url, handler,selfClosing: selfClosing);
 
-  SimpleRouter post(String url, SimpleRouteHandler handler) => addRoute('POST', url, handler);
+  SimpleRouter post(String url, SimpleRouteHandler handler,{selfClosing:false}) => addRoute('POST', url, handler,selfClosing: selfClosing);
 
-  SimpleRouter delete(String url, SimpleRouteHandler handler) => addRoute('DELETE', url, handler);
+  SimpleRouter delete(String url, SimpleRouteHandler handler,{selfClosing:false}) => addRoute('DELETE', url, handler,selfClosing: selfClosing);
 
   int get length => _routes.length;
 
@@ -67,28 +75,34 @@ class SimpleRouter {
       _routes.where((route) => route.matches(verb, url) != null).toList();
 
   Future<bool> execute(HttpRequest req) async {
-    //   var routes = routesForUrl(req.method, req.uri.pathSegments);
+    bool _selfClosing = false;
     try {
       var done = false;
       for (var route in _routes) {
         var mask = route.matches(req.method, req.uri.pathSegments);
         if (mask != null) {
           print('try route ${route.route}');
-          if (await route.execute(req, mask)) {
-            print('completed on ${route.route}');
+          done = await route.execute(req, mask);
+          if (done) {
             done = true;
+            _selfClosing = route.selfClosing; // route should close itself later
             break;
           }
         }
       }
       if (!done && onNoMatch !=null) {
-        await onNoMatch(req,{});
+        return await onNoMatch(req,{});
       }
     } catch (ex, stack) {
       if (onException != null) await onException(req, {'Error': ex.toString(), 'Stack': stack.toString()});
       return false;
     } finally {
-      if (onFinal != null) await onFinal(req, {});
+      if (onFinal != null)
+        return await onFinal(req, {});
+      else  if (_selfClosing)
+        return true;
+      else
+        return await closeResponse(req, {});
     } // of try
     return true;
   } // of execute

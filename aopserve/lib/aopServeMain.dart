@@ -11,6 +11,7 @@ import 'package:http_server/http_server.dart';
 import 'package:mysql1/mysql1.dart';
 import 'package:path/path.dart' as path;
 import 'package:aopcommon/aopcommon.dart';
+import 'FileServer.dart';
 import 'SimpleRouter.dart';
 import 'photoMetadataHandler.dart';
 import 'package:aopserve/db/dbAllOurPhotos.dart';
@@ -22,20 +23,30 @@ VirtualDirectory _staticFileRoot;
 SimpleRouter _router = SimpleRouter();
 bool closedown = false;
 DbAllOurPhotos fred = DbAllOurPhotos();
+FileServer _fileServer;
 
 Future<void> aopServerMain(List<String> args) async {
   if (args.isEmpty)  throw 'Invalid Usage: aopServer configFileName';
+  mainServer = await setupServer(args);
+  await for (HttpRequest request in mainServer) {
+    await _router.execute(request);
+    if (closedown) break;
+  }
+}
+Future<HttpServer> setupServer(List<String> args) async {
   await loadConfig(args[0]);
   int webServerPort = int.tryParse(config['webserver_port']??'8888') ?? 8888;
-  _staticFileRoot = VirtualDirectory(config['fileserver_root']);
-  await fred.initConnection(config);
-  var mainServer = await HttpServer.bind(
-    InternetAddress.loopbackIPv6,
+  _staticFileRoot = VirtualDirectory(config['fileserver_root'],pathPrefix: 'photos');
+  _fileServer = FileServer(config['fileserver_root']);
+//  await fred.initConnection(config);
+  mainServer = await HttpServer.bind(
+    InternetAddress.anyIPv6,
     webServerPort,
   );
+
   _router
     ..get('located/:user/:password',sessionHandler)
-    ..get('favicon.ico', null)
+    ..get('favicon.ico', (req,mask) => true)
     ..addRoute('ANY', '*', securityHandler)  // everything goes through trhe security handler first
     ..get('photos/:month/:image', photoGetHandler)
     ..put('photos/:month/:image', photoPutHandler)
@@ -43,21 +54,12 @@ Future<void> aopServerMain(List<String> args) async {
     ..get('exif/:month/:image', photoMetadataHandler)
     ..get('quitt',quitHandler)
     ..onException = exceptionHandler
-    ..onNoMatch = (req,res)=> processRequest(req);  // old style handler
+    //..onNoMatch = (req,res)=> processRequest(req);  // old style handler
+    ..onNoMatch = (req,mask)=>plainResponse(req.response,HttpStatus.notFound,'$mask not found');
 
-//    ..onNoMatch = (req,res)=>plainResponse(res,HttpStatus.notFound,'not found');
-
-
-  print('AOP Server $VERSION running on ${mainServer.port}');
-  await for (HttpRequest request in mainServer) {
-    await _router.execute(request);
-//    .then(
-//            (value) => request.response.close());
-//    var xx = await _router.execute(request);
-//    await request.response.close();
-    if (closedown) break;
-  }
-}
+  print('AOP Server: $VERSION running on ${mainServer.port}');
+  return mainServer;
+} // of setupServer
 
 
 
@@ -78,7 +80,7 @@ bool plainResponse(HttpResponse response,int thisStatusCode, String text) {
 } // of plainResponse
 
 Future<bool> processRequest(HttpRequest request) async {
-  print('Got ${request.method} request for ${request.uri.path}');
+  print('processRequest ------  ${request.method} request for ${request.uri.path}');
   final response = request.response;
 
 
@@ -156,7 +158,7 @@ Future<bool>exceptionHandler(HttpRequest request,Map<String,String> mask) async 
 Future<bool>photoGetHandler(HttpRequest request,Map<String,String> mask) async {
   File pictureFile = File(localFileName(mask));
   if (pictureFile.existsSync()) {
-    _staticFileRoot.serveFile(pictureFile, request);
+    await _staticFileRoot.serveRequest( request);
   } else {
     plainResponse(request.response, HttpStatus.notFound, '${localFileName(mask)} not found');
   }

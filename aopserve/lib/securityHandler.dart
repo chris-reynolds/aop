@@ -8,7 +8,8 @@ import 'dart:io';
 import 'package:aopcommon/aopcommon.dart';
 
 bool securityCheck(String token) {
-  return token.contains('F71'); // TODO: proper security check
+  return true;
+//  return token.contains('F71'); // TODO: proper security check
 } // of security check
 
 String securityToken(String username, String password ) {
@@ -24,13 +25,14 @@ String securityToken(String username, String password ) {
 
 Map<String,String>cookiesFromHeader(List cookieHeader ) {
   var result = <String,String>{};
-  for (var cookieLine in cookieHeader) {
-    var items = cookieLine.split(';');
-    for (String item in items) {
-      var delimPos = item.indexOf('=');
-      result[item.substring(0,delimPos)] = item.substring(delimPos+1);
+  if (cookieHeader != null)
+    for (var cookieLine in cookieHeader) {
+      var items = cookieLine.split(';');
+      for (String item in items) {
+        var delimPos = item.indexOf('=');
+        result[item.substring(0, delimPos)] = item.substring(delimPos + 1);
+      }
     }
-  }
   return result;
 } // of cookiesFromHeader
 
@@ -40,7 +42,8 @@ Future<bool>securityHandler(HttpRequest request,Map<String,String> mask) async {
   String cookieValue =
   requestCookies.length == 0 ? 'NONE' : requestCookies['aop'];
   bool permissionDenied = !securityCheck(cookieValue);
-  return permissionDenied;
+  if (permissionDenied) request.response.statusCode = HttpStatus.forbidden;
+  return permissionDenied;  // true will dictate the routes are at an end
 } // of securityHandler
 
 Future<bool>sessionHandler(HttpRequest request,Map<String,String> mask) async {
@@ -50,7 +53,7 @@ Future<bool>sessionHandler(HttpRequest request,Map<String,String> mask) async {
   if (!permissionDenied) {
     response.cookies.clear();
     var cookie = Cookie('aop', newToken);
-    cookie.domain = 'aop.co.nz';
+    cookie.domain = request.requestedUri.host;
     cookie.path = '/';
     cookie.maxAge = 10000000;
     response.cookies.add(cookie);
@@ -59,7 +62,7 @@ Future<bool>sessionHandler(HttpRequest request,Map<String,String> mask) async {
     return true;
   } else {
     response.cookies.clear();
-    response.statusCode = HttpStatus.notAcceptable;
+    response.statusCode = HttpStatus.unauthorized;
     response.write('nope');
     return true;
   }
