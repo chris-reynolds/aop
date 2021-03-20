@@ -1,0 +1,6 @@
+{
+	"webserver_port": "5555",
+	"fileserver_root": "../testdata",
+	"password.chris": "temp",
+	"password.janet": "temp"
+}
