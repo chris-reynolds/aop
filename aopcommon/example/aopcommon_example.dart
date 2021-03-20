@@ -2,6 +2,6 @@
 import 'package:aopcommon/aopcommon.dart';
 
 void main() {
-  Awesome awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+
+  log.message('hello world:');
 }

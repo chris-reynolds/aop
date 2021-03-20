@@ -11,12 +11,14 @@ Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
 //  String os = Platform.operatingSystem;
 
   // ignore: omit_local_variable_types
-  String programName = Platform.script.toFilePath();
-  String defaultName =
-      programName.replaceAll('\.dart', '\.config\.json'); //.substring(5);
-  defaultName = defaultName.replaceAll('\.aot', '\.config\.json');
-  defaultName = path.basename(defaultName);
-  String actualFilename = commandLineFilename ?? defaultName;
+  String actualFilename = commandLineFilename;
+  if (actualFilename == null) {
+    String programName = Platform.script.toFilePath();
+    String defaultName =
+    programName.replaceAll('\.dart', '\.config\.json'); //.substring(5);
+    defaultName = defaultName.replaceAll('\.aot', '\.config\.json');
+    actualFilename = path.basename(defaultName);
+  }
 //  if (Path.dirname(actualFilename)=='.')
 //    actualFilename = Path.join((await getApplicationDocumentsDirectory()).path,actualFilename); todo restore
   if (!FileSystemEntity.isFileSync(actualFilename)) {

@@ -41,6 +41,15 @@ class GeocodingSession {
     return _cache[key];
   } // of getLocation
 
+  String removeDiacritics(String str) {
+    var withDia = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽžāēīōū';
+    var withoutDia = 'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZzaeiou';
+    for (int i = 0; i < withDia.length; i++)
+      str = str.replaceAll(withDia[i], withoutDia[i]);
+    return str;
+  } // of removeDiacritics
+
+
   void setLocation(double longitude, double latitude, String location) {
     final String key = _calcKey(longitude, latitude);
     _cache[key] = location;
@@ -64,9 +73,12 @@ class GeocodingSession {
     Map<String,dynamic> data = jsonDecode(responseBody);
     httpClient.close();
     String result = data['display_name'];
-    bool goodLocationFound = (result != null);
-    if (!goodLocationFound) log.error('Bad geolocation response $data');
-    return goodLocationFound ? result : null;
+    if (result != null) {
+      return removeDiacritics(result);
+    } else {
+      log.error('Bad geolocation response $data');
+      return null;
+    }
   } // of urlLookupFromCoordinates
 
 } // of GeocodingSession
