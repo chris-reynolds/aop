@@ -25,10 +25,11 @@ class GeocodingSession {
     double longDegree = 111.0 * cos(latitude * pi / 180);
     int latTiles = (latitude * latDegree / _tileSizeKms).round();
     int longTiles = (longitude * longDegree / _tileSizeKms).round();
+    log.message('Geo-key $longTiles:$latTiles for ($longitude,$latitude');
     return '$longTiles:$latTiles';
   } // of _calcKey
 
-  final Map<String, String> _cache = <String,String>{};
+  Map<String, String> _cache = <String,String>{};
 
   int get length => _cache.length;
 
