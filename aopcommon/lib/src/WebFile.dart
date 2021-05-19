@@ -11,14 +11,25 @@ import 'package:aopcommon/aopcommon.dart';
 
 String get rootUrl => 'http://${config["dbhost"]}:3333';
 
+
+
 class WebFile {
   String url;
   String contents = '';
 
   WebFile._(this.url); // private constructor
-}
 
-Future<WebFile> loadWebFile(String url, String defaultValue) async {
+  static Future<bool> get hasWebServer async {
+    try {
+      var response = await loadWebFile('', 'blah');
+      return (response.contents=='blah');
+    } catch(ex) {
+      return false;
+    }
+  }
+} // of webFile
+
+Future<WebFile> loadWebFile(String url, String defaultValue,{int timeOut = 10}) async {
   if (!url.contains('http:')) url = rootUrl + '/' + url;
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
@@ -28,7 +39,7 @@ Future<WebFile> loadWebFile(String url, String defaultValue) async {
   } catch (ex) {
     log.error(ex);
   }
-  HttpClientResponse response = await request.close();
+  HttpClientResponse response = await request.close().timeout(Duration(seconds:timeOut));
 //  HttpResponse responseBody = await response.transform(utf8.decoder).join();
   //   print("Received $responseBody...");
   httpClient.close();
@@ -122,18 +133,19 @@ Future<Image> loadWebImage(String url) async => decodeImage(await loadWebBinary(
 
 Future<void> saveWebImage(String urlString,
     {Image image, int quality = 100, String metaData}) async {
-  var postUri = Uri.parse(urlString);
-  List<int> payLoad;
-  HttpClient httpClient = HttpClient();
-  var request = await httpClient.putUrl(postUri);
-  if (image != null) {
-    payLoad = encodeJpg(image, quality: quality);
-    request.add(payLoad);
-  } else if (metaData != null) {
-    payLoad = utf8.encode(metaData);
-    request.add(payLoad);
-  }
-    var response = await request.close();
+  try {
+    var postUri = Uri.parse(urlString);
+    List<int> payLoad;
+    HttpClient httpClient = HttpClient();
+    var request = await httpClient.putUrl(postUri);
+    if (image != null) {
+      payLoad = encodeJpg(image, quality: quality);
+      request.add(payLoad);
+    } else if (metaData != null) {
+      payLoad = utf8.encode(metaData);
+      request.add(payLoad);
+    }
+    var response = await request.close().timeout(Duration(seconds:20));
     bool successfulResponse = (response.statusCode == 200);
     await response.drain();
     await httpClient.close();
@@ -141,7 +153,10 @@ Future<void> saveWebImage(String urlString,
       log.message("Uploaded $urlString");
     else
       throw Exception('Failed to upload $urlString with $response');
-  payLoad = [];  // clear in case this is the memory leak
-  response = null;
-  httpClient = null;
+    payLoad = [];  // clear in case this is the memory leak
+    response = null;
+    httpClient = null;
+  } catch(ex,st) {
+    throw Exception('Failed to save web image $urlString with $ex \n $st');
+  }
 } // of httpPostImage
