@@ -19,6 +19,7 @@ class _Log {
     String stampedMessage = '${formatDate(DateTime.now(),format: 'hh:nn:ss.lll')} $s';
     _logHistory.add(stampedMessage);
     if (_logHistory.length > 1000) _logHistory.removeAt(0);
+    print(stampedMessage);
  //   if (logLevel == eLogLevel.llMessage) onMessage(stampedMessage);
   };
 
@@ -29,7 +30,7 @@ class _Log {
   void message(String s) => onMessage(s);
 
   void error(String s) {
-    onError('${formatDate(DateTime.now(),format: 'hh:nn:ss.lll')} $s');
+    onError(' $s');
   }
   String _logFilename;
   set logFilename(String s) {_logFilename=s;}
