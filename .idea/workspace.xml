@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="75c285f2-1f47-4dc9-99b4-c789f8c9d94c" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/aopclient/allourphotos.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/CHANGES.md" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/CHANGES.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/lib/JpegLoader.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/lib/JpegLoaderxx.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aopclient/lib/aopAppMain.dart" beforeDir="false" afterPath="$PROJECT_DIR$/aopclient/lib/aopAppMain.dart" afterDir="false" />
@@ -19,7 +18,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@/Users/chrisreynolds/.android/avd/Android_Wear_Square_API_23.avd]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -38,6 +37,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
