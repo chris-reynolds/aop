@@ -1,10 +1,34 @@
 // ignore_for_file: omit_local_variable_types
 import 'dart:io';
+import 'dart:collection';
 import 'dart:convert' show jsonDecode, utf8, jsonEncode;
 import 'package:path/path.dart' as path;
 import 'Logger.dart';
 
-Map<String, dynamic> config = <String, dynamic>{};
+class MapWithDirty with MapMixin<String,dynamic> {
+  Map<String,dynamic> _map = {};
+  bool dirty = false;
+  Iterable<String> get keys  => _map.keys;
+  void clear() => _map.clear();
+  void remove(Object key) => _map.remove(key);
+  dynamic operator [] (Object key) => _map[key];
+  operator []=(Object key,dynamic value) {
+    if (_map[key] == value) return;
+    _map[key] = value;
+    dirty = true;
+  }
+  void init(Map map) {
+    clear;
+    dirty = false;
+    addAll(map);
+  } // init
+
+} // of MapWithDirty
+
+
+//Map<String, dynamic> config = <String, dynamic>{};
+var config = MapWithDirty();
+
 String finalFileName;
 
 Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
@@ -23,12 +47,12 @@ Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
 //    actualFilename = Path.join((await getApplicationDocumentsDirectory()).path,actualFilename); todo restore
   if (!FileSystemEntity.isFileSync(actualFilename)) {
     log.message('Invalid configuration name $actualFilename');
-    config = <String,dynamic>{'dbhost':'last1.local', 'dbname': 'allourphotos_dev', 'dbport': '3306'};
+    config.init(<String,dynamic>{'dbhost':'192.168.1.198', 'dbname': 'allourphotos_dev', 'dbport': '3306'});
   } else {
     String configContents =
         File(actualFilename).readAsStringSync(encoding: utf8);
     try {
-      config = jsonDecode(configContents);
+      config.init(jsonDecode(configContents));
     } catch (err, st) {
       throw 'Corrupt configuration file $actualFilename \n $st';
     } // of catch
@@ -38,9 +62,15 @@ Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
 } // of loadConfig
 
 Future<void> saveConfig() async {
+  if (!config.dirty) {
+    log.message('CONFIG IS UNCHANGED');
+    return;
+  }
   final String serialized = jsonEncode(config);
   try {
     await File(finalFileName).writeAsString(serialized);
+    config.dirty = false;  // saved to no longer dirty
+    log.message('Config saved');
   } catch (ex) {
     log.error('Failed to save config to $finalFileName \n with error $ex');
     rethrow;

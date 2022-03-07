@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   image:
-  exifdart:
+  exif:
 
 dev_dependencies:
   pedantic: ^1.11.0

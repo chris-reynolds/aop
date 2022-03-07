@@ -1,23 +1,40 @@
 /**
  * Created by Chris on 21/09/2018.
  */
-import 'package:exifdart/exifdart.dart' as exif;
+import 'package:exif/exif.dart' as exif;
 import 'package:aopcommon/aopcommon.dart';
 
 class JpegLoader {
   static const UNKNOWN_LONGLAT = null;
 //  List<int> _buffer;
-  Map<String, dynamic> tags;
+  Map<String, dynamic> tags = Map<String,dynamic>();
 
   Future<void> extractTags(List<int> newBuffer) async {
-//    _buffer = newBuffer;
-    exif.MemoryBlobReader mbr = exif.MemoryBlobReader(newBuffer);
+    var progressKey = '';
+    tags.clear();
     try {
-      tags = (await exif.readExif(mbr,printDebugInfo: false))??{};
+      var mytags = await exif.readExifFromBytes(newBuffer);
+      mytags.forEach((key, value) {
+        progressKey = key;
+        if (key.length>6 && key.substring(0,6) == 'Image ')
+          key = key.substring(6);
+        if (key.length>4 && key.substring(0,4) == 'GPS ')
+          key = key.substring(4);
+        if (key.length>5 && key.substring(0,5) == 'EXIF ')
+          key = key.substring(5);
+        if (value.tagType=='Ratio' && value.printable.startsWith('\[') )
+          tags[key] = (value.values as exif.IfdRatios).ratios;
+        else {
+          var strValue = value.toString ();
+          if (int.tryParse(strValue) != null)
+            tags[key] = int.parse(strValue);
+          else
+            tags[key] = strValue;
+        }
+      });
     } catch(ex,st) {
-      log.error('failed to extract tags $ex \n $st');
+      log.error('failed to extract tag $progressKey with $ex \n $st');
     }
-    mbr = null;
     if (tags.containsKey('MakerNote'))
         tags.remove('MakerNote');
 //    Log.message('tags length= ${tags.length}');
@@ -57,11 +74,18 @@ class JpegLoader {
     dynamic result = null;
     tagName = tagName.toLowerCase();
       tags.forEach((key,value){
-        if (key.toLowerCase() == tagName)
+        if (key.toLowerCase() == tagName || key.toLowerCase() == 'image $tagName')
           result = value;
       });
 //      if (result == null)
 //        Log.message('++++++++++++++++tag $tagName not found');
       return result;
   }
+
+  void cleanTags() {
+    for (var key in tags.keys) {
+      if  (! (tags[key] is String || tags[key] is int)  )
+        tags[key] = tags[key].toString();
+    }
+  } // of cleanTags
 } // of JpegLoader
