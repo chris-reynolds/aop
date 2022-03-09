@@ -22,7 +22,7 @@ class JpegLoader {
           key = key.substring(4);
         if (key.length>5 && key.substring(0,5) == 'EXIF ')
           key = key.substring(5);
-        if (value.tagType=='Ratio' && value.printable.startsWith('\[') )
+        if (value.tagType.contains('Ratio') && value.printable.startsWith('\[') )
           tags[key] = (value.values as exif.IfdRatios).ratios;
         else {
           var strValue = value.toString ();
@@ -50,7 +50,8 @@ class JpegLoader {
     if (dms == null) return UNKNOWN_LONGLAT;
     double result = 0.0;
     for (int ix in [2, 1, 0]) {
-      result = result / 60 + (dms[ix].numerator / dms[ix].denominator);
+      if (dms[ix].denominator>0)
+        result = result / 60 + (dms[ix].numerator / dms[ix].denominator);
     }
     if ('sSwW'.indexOf(direction) >= 0) result = -result;
     return result;
