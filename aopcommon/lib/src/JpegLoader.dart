@@ -22,7 +22,8 @@ class JpegLoader {
           key = key.substring(4);
         if (key.length>5 && key.substring(0,5) == 'EXIF ')
           key = key.substring(5);
-        if (value.tagType.contains('Ratio') && value.printable.startsWith('\[') )
+        if (value.tagType.contains('Ratio') && value.printable.startsWith('\[')
+            && value.values is exif.IfdRatios)
           tags[key] = (value.values as exif.IfdRatios).ratios;
         else {
           var strValue = value.toString ();
