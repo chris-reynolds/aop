@@ -32,7 +32,7 @@ var config = MapWithDirty();
 String finalFileName;
 
 Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
-//  String os = Platform.operatingSystem;
+  const DEFAULT_CONFIG = <String,dynamic>{'dbhost':'192.168.1.198', 'dbname': 'allourphotos_dev', 'dbport': '3306'};
 
   // ignore: omit_local_variable_types
   String actualFilename = commandLineFilename;
@@ -47,14 +47,15 @@ Future<Map<String, dynamic> > loadConfig([String commandLineFilename]) async {
 //    actualFilename = Path.join((await getApplicationDocumentsDirectory()).path,actualFilename); todo restore
   if (!FileSystemEntity.isFileSync(actualFilename)) {
     log.message('Invalid configuration name $actualFilename');
-    config.init(<String,dynamic>{'dbhost':'192.168.1.198', 'dbname': 'allourphotos_dev', 'dbport': '3306'});
+    config.init(DEFAULT_CONFIG);
   } else {
     String configContents =
         File(actualFilename).readAsStringSync(encoding: utf8);
     try {
       config.init(jsonDecode(configContents));
     } catch (err, st) {
-      throw 'Corrupt configuration file $actualFilename \n $st';
+      log.error('Corrupt configuration file $actualFilename \n $st');
+      config.init(DEFAULT_CONFIG);
     } // of catch
   }
   finalFileName = actualFilename;
