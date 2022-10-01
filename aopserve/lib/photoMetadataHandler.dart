@@ -11,7 +11,7 @@ import 'package:exif/exif.dart';
 Future<String> extractExiff(String path) async {
   List<String> result = [];
   Map<String, IfdTag> data = await readExifFromBytes(await new File(path).readAsBytes());
-  if (data == null || data.isEmpty)
+  if (data.isEmpty)
     result.add('Error: No EXIF information found');
   else {
     String thisKey = 'JPEGThumbnail';

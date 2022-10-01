@@ -27,8 +27,7 @@ class TestRequest  {
       request = await httpClient.putUrl(url2);
       request.add(putData);
     }
-    if (cookie != null)
-      request.cookies.add(Cookie('aop',cookie));
+    request.cookies.add(Cookie('aop',cookie));
     response = await request.close();
     responseText = await response.transform(utf8.decoder).toList();
     testLog('Response ${response.statusCode}: type ${responseText.runtimeType} $responseText');

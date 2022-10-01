@@ -6,7 +6,6 @@
 */
 import 'dart:io';
 
-import 'package:path/path.dart';
 
 class FileServer {
   Directory? _rootDir;

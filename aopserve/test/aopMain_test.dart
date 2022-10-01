@@ -1,12 +1,6 @@
-/**
- * Created by Chris on 14/09/2018.
- */
-
-import 'dart:io';
 //import 'dart:convert';
 //import 'dart:async';
 import 'package:test/test.dart';
-import 'package:aopcommon/aopcommon.dart';
 import '../lib/aopServeMain.dart' as aopServe;
 import 'aopTestSupport.dart';
 //import 'package:test_api/src/backend/invoker.dart' as Fred;
@@ -21,10 +15,8 @@ void main() {
 
   tearDown(() async {
    // print('teardown ');
-    if (aopServe.mainServer != null) {
-      await aopServe.mainServer.close(force: true);
-      aopServe.mainServer = null;
-    }
+    await aopServe.mainServer.close(force: true);
+    aopServe.mainServer = null;
   });
   group('temp',(){
     login();

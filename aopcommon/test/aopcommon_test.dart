@@ -1,3 +1,5 @@
+// ignore_for_file: omit_local_variable_types
+
 import 'package:aopcommon/aopcommon.dart';
 import 'package:test/test.dart';
 
@@ -47,7 +49,7 @@ void dateTests() {
   test('formatDate', () {
     //  formatDate(DateTime aDate, {String format = 'yyyy-mm-d'})
     DateTime dy = DateTime(2020,1,2,3,4,5,6,7,);
-    String target = '2020-01-02 03:04:05.006';
+   // String target = '2020-01-02 03:04:05.006';
     expect('2020-01-2',equals(formatDate(dy)));
     expect('2020-01-02',equals(formatDate(dy,format:'yyyy-mm-dd')));
   });

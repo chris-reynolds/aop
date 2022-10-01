@@ -101,7 +101,7 @@ class DOProvider<TDO extends DomainObject> {
     String sql;
     try {
       List<dynamic> dataFields = aDomainObject.toRow();
-      if (aDomainObject.id != null && aDomainObject.id > 0) {
+      if (aDomainObject.id > 0) {
         // then update
         sql = sqlStatements.updateStatement();
         if (sqlLogging) log.message('save sql : $sql');

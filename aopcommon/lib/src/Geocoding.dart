@@ -29,7 +29,7 @@ class GeocodingSession {
     return '$longTiles:$latTiles';
   } // of _calcKey
 
-  Map<String, String> _cache = <String,String>{};
+  final Map<String, String> _cache = <String,String>{};
 
   int get length => _cache.length;
 
@@ -43,10 +43,11 @@ class GeocodingSession {
   } // of getLocation
 
   String removeDiacritics(String str) {
-    var withDia = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽžĀāĒēĪīŌōŪūþ';
-    var withoutDia = 'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZzAaEeIiOoUup';
-    for (int i = 0; i < withDia.length; i++)
+    String withDia = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽžĀāĒēĪīŌōŪūþ';
+    String withoutDia = 'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZzAaEeIiOoUup';
+    for (int i = 0; i < withDia.length; i++) {
       str = str.replaceAll(withDia[i], withoutDia[i]);
+    }
     return str;
   } // of removeDiacritics
 

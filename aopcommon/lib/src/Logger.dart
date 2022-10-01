@@ -1,6 +1,8 @@
 ///
 /// Created by Chris on 21/09/2018.
 ///
+// ignore_for_file: omit_local_variable_types
+
 import 'DateUtil.dart';
 import 'dart:io';
 

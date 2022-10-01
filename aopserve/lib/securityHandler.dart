@@ -14,7 +14,7 @@ bool securityCheck(String token) {
 
 String securityToken(String username, String password ) {
   int suffixHelp = 9;
-  if (config['password.' + username] == password  && password != null) {
+  if (config['password.' + username] == password) {
     return DateTime.now().millisecondsSinceEpoch.toRadixString(13) +
         'F' +
         (8 * suffixHelp - 1).toString();
@@ -25,14 +25,13 @@ String securityToken(String username, String password ) {
 
 Map<String,String>cookiesFromHeader(List cookieHeader ) {
   var result = <String,String>{};
-  if (cookieHeader != null)
-    for (var cookieLine in cookieHeader) {
-      var items = cookieLine.split(';');
-      for (String item in items) {
-        var delimPos = item.indexOf('=');
-        result[item.substring(0, delimPos)] = item.substring(delimPos + 1);
-      }
+  for (var cookieLine in cookieHeader) {
+    var items = cookieLine.split(';');
+    for (String item in items) {
+      var delimPos = item.indexOf('=');
+      result[item.substring(0, delimPos)] = item.substring(delimPos + 1);
     }
+  }
   return result;
 } // of cookiesFromHeader
 

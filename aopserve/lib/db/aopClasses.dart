@@ -35,8 +35,7 @@ class AopAlbum extends DomainObject {
 //                                '*** End Custom Code
   // constructor
   AopAlbum ({Map<String,dynamic> data}) : super(data:data) {
-  if (data != null)
-    fromMap(data);
+  fromMap(data);
 //                                '*** Start Custom Code album.create
 //                                '*** End Custom Code
   } // of constructor 
@@ -194,8 +193,7 @@ class AopAlbumItem extends DomainObject {
 //                                '*** End Custom Code
   // constructor
   AopAlbumItem ({Map<String,dynamic> data}) : super(data:data) {
-  if (data != null)
-    fromMap(data);
+  fromMap(data);
 //                                '*** Start Custom Code album item.create
 //                                '*** End Custom Code
   } // of constructor 
@@ -295,8 +293,7 @@ class AopSession extends DomainObject {
 //                                '*** End Custom Code
   // constructor
   AopSession ({Map<String,dynamic> data}) : super(data:data) {
-  if (data != null)
-    fromMap(data);
+  fromMap(data);
 //                                '*** Start Custom Code session.create
 //                                '*** End Custom Code
   } // of constructor 
@@ -420,8 +417,7 @@ class AopSnap extends DomainObject {
 //                                '*** End Custom Code
   // constructor
   AopSnap ({Map<String,dynamic> data}) : super(data:data) {
-  if (data != null)
-    fromMap(data);
+  fromMap(data);
 //                                '*** Start Custom Code snap.create
     if (ranking == null) ranking = 2;
     if (mediaType == null) mediaType = 'jpg';
@@ -705,7 +701,7 @@ Future<void> delete() async {
   } // of metadataURL
 
   void trimSetLocation(String newLocation) {
-    if (newLocation != null && newLocation.length > 200)
+    if (newLocation.length > 200)
       newLocation = newLocation.substring(newLocation.length - 200);
     this.location = newLocation;
   } // of trimSetLocation
@@ -734,8 +730,7 @@ class AopUser extends DomainObject {
 //                                '*** End Custom Code
   // constructor
   AopUser ({Map<String,dynamic> data}) : super(data:data) {
-  if (data != null)
-    fromMap(data);
+  fromMap(data);
 //                                '*** Start Custom Code user.create
 //                                '*** End Custom Code
   } // of constructor 

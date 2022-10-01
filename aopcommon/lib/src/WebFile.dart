@@ -1,3 +1,5 @@
+// ignore_for_file: omit_local_variable_types
+
 /*
   Created by chrisreynolds on 2019-09-09
   
@@ -47,10 +49,11 @@ Future<WebFile> loadWebFile(String url, String defaultValue,{int timeOut = 10}) 
   if (response.statusCode != 200) {
     if (defaultValue == null) throw 'Failed to load ' + url;
     result.contents = defaultValue;
-  } else
-    await utf8.decoder.bind(response).forEach((x) {
+  } else {
+    await utf8.decoder.bind(response).forEach((String x) {
       result.contents += x;
     });
+  }
   return result;
 }
 
@@ -73,10 +76,11 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
   } catch (ex) {
     String errMessage = 'Failed to save ${webFile.url} with reason ${response.reasonPhrase}';
     log.error(errMessage);
-    if (silent)
+    if (silent) {
       return false;
-    else
+    } else {
       rethrow;
+    }
   }
   return true;
 } // of saveWebFile
@@ -96,9 +100,9 @@ Future<List<int>> loadWebBinary(String url) async {
   //   print("Received $responseBody...");
   httpClient.close();
   if (response.statusCode != 200) throw 'Failed to load ' + url;
-  List<int> download = [];
-  await response.toList().then((chunks) {
-    chunks.forEach((chunk) {
+  List<int> download = <int>[];
+  await response.toList().then((List<List<int>> chunks) {
+    chunks.forEach((List<int> chunk) {
       download.addAll(chunk);
     });
   });
@@ -148,11 +152,12 @@ Future<void> saveWebImage(String urlString,
     var response = await request.close().timeout(Duration(seconds:20));
     bool successfulResponse = (response.statusCode == 200);
     await response.drain();
-    await httpClient.close();
-    if (successfulResponse)
-      log.message("Uploaded $urlString");
-    else
+    httpClient.close();
+    if (successfulResponse) {
+      log.message('Uploaded $urlString');
+    } else {
       throw Exception('Failed to upload $urlString with $response');
+    }
     payLoad = [];  // clear in case this is the memory leak
     response = null;
     httpClient = null;
