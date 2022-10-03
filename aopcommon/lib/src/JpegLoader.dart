@@ -6,8 +6,8 @@ import 'package:aopcommon/aopcommon.dart';
 
 class JpegLoader {
   static const UNKNOWN_LONGLAT = null;
-//  List<int> _buffer;
-  Map<String, dynamic> tags = <String,dynamic>{};
+
+  Map<String, dynamic> tags = <String, dynamic>{};
 
   Future<void> extractTags(List<int> newBuffer) async {
     var progressKey = '';
@@ -16,20 +16,21 @@ class JpegLoader {
       var mytags = await exif.readExifFromBytes(newBuffer);
       mytags.forEach((String key, exif.IfdTag value) {
         progressKey = key;
-        if (key.length>6 && key.substring(0,6) == 'Image ') {
+        if (key.length > 6 && key.substring(0, 6) == 'Image ') {
           key = key.substring(6);
         }
-        if (key.length>4 && key.substring(0,4) == 'GPS ') {
+        if (key.length > 4 && key.substring(0, 4) == 'GPS ') {
           key = key.substring(4);
         }
-        if (key.length>5 && key.substring(0,5) == 'EXIF ') {
+        if (key.length > 5 && key.substring(0, 5) == 'EXIF ') {
           key = key.substring(5);
         }
-        if (value.tagType.contains('Ratio') && value.printable.startsWith('\[')
-            && value.values is exif.IfdRatios) {
+        if (value.tagType.contains('Ratio') &&
+            value.printable.startsWith('\[') &&
+            value.values is exif.IfdRatios) {
           tags[key] = (value.values as exif.IfdRatios).ratios;
         } else {
-          var strValue = value.toString ();
+          var strValue = value.toString();
           if (int.tryParse(strValue) != null) {
             tags[key] = int.parse(strValue);
           } else {
@@ -37,7 +38,7 @@ class JpegLoader {
           }
         }
       });
-    } catch(ex,st) {
+    } catch (ex, st) {
       log.error('failed to extract tag $progressKey with $ex \n $st');
     }
     if (tags.containsKey('MakerNote')) {
@@ -56,7 +57,7 @@ class JpegLoader {
     if (dms == null) return UNKNOWN_LONGLAT;
     double result = 0.0;
     for (int ix in [2, 1, 0]) {
-      if (dms[ix].denominator>0) {
+      if (dms[ix].denominator > 0) {
         result = result / 60 + (dms[ix].numerator / dms[ix].denominator);
       }
     }
@@ -77,23 +78,22 @@ class JpegLoader {
     } // of try catch
   } // dateTimeFromExit
 
-
   dynamic tag(String tagName) {
     dynamic result;
     tagName = tagName.toLowerCase();
-      tags.forEach((String key,value){
-        if (key.toLowerCase() == tagName || key.toLowerCase() == 'image $tagName') {
-          result = value;
-        }
-      });
+    tags.forEach((String key, value) {
+      if (key.toLowerCase() == tagName || key.toLowerCase() == 'image $tagName') {
+        result = value;
+      }
+    });
 //      if (result == null)
 //        Log.message('++++++++++++++++tag $tagName not found');
-      return result;
+    return result;
   }
 
   void cleanTags() {
     for (var key in tags.keys) {
-      if  (! (tags[key] is String || tags[key] is int)  ) {
+      if (!(tags[key] is String || tags[key] is int)) {
         tags[key] = tags[key].toString();
       }
     }

@@ -4,28 +4,14 @@
 ///  Purpose: Date utilities
 ///
 // ignore_for_file: omit_local_variable_types
+import 'package:aopcommon/aopcommon.dart';
 
-const List<int> _daysInMonth = <int>[
-  0,
-  31,
-  28,
-  31,
-  30,
-  31,
-  30,
-  31,
-  31,
-  30,
-  31,
-  30,
-  31
-];
-final List<String> _monthNames =
-    'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+const List<int> _daysInMonth = <int>[0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+final List<String> _monthNames = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+
 int _iMin(int x, int y) => (x < y) ? x : y;
 
-bool isLeapYear(int value) =>
-    value % 400 == 0 || (value % 4 == 0 && value % 100 != 0);
+bool isLeapYear(int value) => value % 400 == 0 || (value % 4 == 0 && value % 100 != 0);
 
 int daysInMonth(int year, int month) {
   int result = _daysInMonth[month];
@@ -44,13 +30,16 @@ DateTime addMonths(DateTime dt, int value) {
   }
   int newDay = _iMin(dt.day, daysInMonth(newYear, newMonth));
   if (dt.isUtc) {
-    return DateTime.utc(newYear, newMonth, newDay, dt.hour, dt.minute,
-        dt.second, dt.millisecond, dt.microsecond);
+    return DateTime.utc(
+        newYear, newMonth, newDay, dt.hour, dt.minute, dt.second, dt.millisecond, dt.microsecond);
   } else {
-    return DateTime(newYear, newMonth, newDay, dt.hour, dt.minute, dt.second,
-        dt.millisecond, dt.microsecond);
+    return DateTime(
+        newYear, newMonth, newDay, dt.hour, dt.minute, dt.second, dt.millisecond, dt.microsecond);
   }
 } // addMonth
+
+DateTime monthEnd(DateTime dt) =>
+    DateTime(dt.year, dt.month, daysInMonth(dt.year, dt.month), 23, 59, 59);
 
 String formatDate(DateTime aDate, {String format = 'yyyy-mm-d'}) {
   String _right(String s, {int size = 2}) => s.substring(s.length - size);
@@ -70,7 +59,7 @@ String formatDate(DateTime aDate, {String format = 'yyyy-mm-d'}) {
     result = result.replaceAll('ss', n99(aDate.second));
     result = result.replaceAll('lll', n999(aDate.millisecond));
   } catch (ex) {
-    print(ex);
+    log.error('DateUtils:$ex');
   }
   return result;
 }
@@ -87,32 +76,30 @@ DateTime parseDMY(String inputStr, {bool allowYearOnly = false}) {
     // assume d/m/yy
     dateBits = bits[0].split('/');
     if (dateBits.length != 3) throw 'Must be in the form d/m/y';
-    if (dateBits[0].length == 1) dateBits[0] = '0' + dateBits[0];
-    if (dateBits[1].length == 1) dateBits[1] = '0' + dateBits[1];
-    if (dateBits[2].length == 2  && dateBits[2].compareTo('50') > 0) {
-      dateBits[2] = '19' + dateBits[2];
-    } else {
-      dateBits[2] = '20' + dateBits[2];
+    if (dateBits[0].length == 1) dateBits[0] = '0${dateBits[0]}';
+    if (dateBits[1].length == 1) dateBits[1] = '0${dateBits[1]}';
+    if (dateBits[2].length == 2) {
+      if (dateBits[2].compareTo('50') > 0) {
+        dateBits[2] = '19${dateBits[2]}';
+      } else {
+        dateBits[2] = '20${dateBits[2]}';
+      }
     }
     bits[0] = '${dateBits[2]}-${dateBits[1]}-${dateBits[0]}';
   }
   String workStr = bits.join(' '); // join the time back on, if any
   return DateTime.parse(workStr);
-}  // parseDMY
+} // parseDMY
 
 DateTime dateTimeFromExif(String exifString) {
   try {
-    String tmp = exifString.substring(0, 4) +
-        '-' +
-        exifString.substring(5, 7) +
-        '-' +
-        exifString.substring(8);
+    String tmp =
+        '${exifString.substring(0, 4)}-${exifString.substring(5, 7)}-${exifString.substring(8)}';
     return DateTime.parse(tmp);
   } catch (ex) {
     return null;
   } // of try catch
 } // dateTimeFromExif
 
-String dbDate(DateTime aDate) => (aDate == null)
-    ? null
-    : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');
+String dbDate(DateTime aDate) =>
+    (aDate == null) ? null : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');

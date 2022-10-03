@@ -13,7 +13,10 @@ class GeocodingSession {
   static const String _host =
       'https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14';
   static double calcSign(String direction, double magnitude) {
-    if (direction == null) {
+    if (direction == null) {      
+            return magnitude;
+    if ('SWsw'.contains(direction))
+      magnitude = - magnitude;
       return magnitude;
     }
     return ('SsWw'.contains(direction)) ? -magnitude : magnitude;
