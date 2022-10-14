@@ -12,10 +12,10 @@ import 'Logger.dart';
 class GeocodingSession {
   static const String _host =
       'https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14';
-  static double calcSign(String/*?*/ direction, double magnitude) {
+  static double calcSign(String? direction, double magnitude) {
     if (direction == null) {      
             return magnitude;
-    if ('SWsw'.contains(direction))
+    if ('SWsw'.contains(direction!))
       magnitude = - magnitude;
       return magnitude;
     }
@@ -32,14 +32,14 @@ class GeocodingSession {
     return '$longTiles:$latTiles';
   } // of _calcKey
 
-  final Map<String, String> _cache = <String,String>{};
+  final Map<String, String?> _cache = <String,String?>{};
 
   int get length => _cache.length;
 
-  Future<String> getLocation(double longitude, double latitude) async {
+  Future<String?> getLocation(double longitude, double latitude) async {
     final String key = _calcKey(longitude, latitude);
     if (_cache[key] == null) {
-      String newLocation = await urlLookupFromCoordinates(latitude, longitude);
+      String? newLocation = await urlLookupFromCoordinates(latitude, longitude);
       _cache[key] = newLocation;
     }
     return _cache[key];
@@ -60,24 +60,24 @@ class GeocodingSession {
     _cache[key] = location;
   } // of setLocation
 
-  Future<String> urlLookupFromCoordinates(
+  Future<String?> urlLookupFromCoordinates(
       double latitude, double longitude) async {
     final String url = '$_host&lat=$latitude&lon=$longitude';
     log.message('Sending $url...');
     final Uri uri = Uri.parse(url);
     HttpClient httpClient = HttpClient();
-    HttpClientRequest request;
+    late HttpClientRequest request;
     try {
       request = await httpClient.openUrl('GET', uri);
     } catch (ex) {
-      log.error(ex);
+      log.error('$ex');
     }
     HttpClientResponse response = await request.close();
     String responseBody = await response.transform(utf8.decoder).join();
     //   print("Received $responseBody...");
     Map<String,dynamic> data = jsonDecode(responseBody);
     httpClient.close();
-    String result = data['display_name'];
+    String? result = data['display_name'];
     if (result != null) {
       return removeDiacritics(result);
     } else {

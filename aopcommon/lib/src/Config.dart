@@ -13,36 +13,36 @@ class MapWithDirty with MapMixin<String, dynamic> {
   @override
   void clear() => _map.clear();
   @override
-  void remove(Object/*!*/ key) => _map.remove(key);
+  dynamic remove(Object? key) => _map.remove(key);
   @override
-  dynamic operator [](Object/*!*/ key) => _map[key];
+  dynamic operator [](Object? key) => _map[key];
   @override
   operator []=(Object key, dynamic value) {
     if (_map[key] == value) return;
-    _map[key] = value;
+    _map[key as String] = value;
     dirty = true;
   }
 
   void init(Map map) {
     clear;
     dirty = false;
-    addAll(map);
+    addAll(map as Map<String, dynamic>);
   } // init
 } // of MapWithDirty
 
 //Map<String, dynamic> config = <String, dynamic>{};
 MapWithDirty config = MapWithDirty();
 
-String finalFileName;
+late String finalFileName;
 
-Future<Map<String, dynamic>> loadConfig([String commandLineFilename]) async {
+Future<Map<String, dynamic>> loadConfig([String? commandLineFilename]) async {
   const Map<String, dynamic> DEFAULT_CONFIG = <String, dynamic>{
     'dbhost': '192.168.1.198',
     'dbname': 'allourphotos_dev',
     'dbport': '3306'
   };
 
-  String actualFilename = commandLineFilename;
+  String? actualFilename = commandLineFilename;
   if (actualFilename == null) {
     String programName = Platform.script.toFilePath();
     String defaultName = programName.replaceAll('\.dart', '\.config\.json'); //.substring(5);

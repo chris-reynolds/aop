@@ -31,15 +31,15 @@ class WebFile {
   }
 } // of webFile
 
-Future<WebFile> loadWebFile(String url, String/*?*/ defaultValue,{int timeOut = 10}) async {
+Future<WebFile> loadWebFile(String url, String? defaultValue,{int timeOut = 10}) async {
   if (!url.contains('http:')) url = rootUrl + '/' + url;
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
-  HttpClientRequest request;
+  late HttpClientRequest request;
   try {
     request = await httpClient.openUrl('GET', uri);
   } catch (ex) {
-    log.error(ex);
+    log.error('$ex');
   }
   HttpClientResponse response = await request.close().timeout(Duration(seconds:timeOut));
 //  HttpResponse responseBody = await response.transform(utf8.decoder).join();
@@ -58,7 +58,7 @@ Future<WebFile> loadWebFile(String url, String/*?*/ defaultValue,{int timeOut = 
 }
 
 Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
-  HttpClientResponse response;
+  late HttpClientResponse response;
   try {
     final uri = Uri.parse(webFile.url);
     var httpClient = HttpClient();
@@ -67,7 +67,7 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
       request = await httpClient.openUrl('PUT', uri);
       request.write(webFile.contents);
     } catch (ex) {
-      log.error(ex);
+      log.error('$ex');
       return false;
     }
     response = await request.close();
@@ -89,11 +89,11 @@ Future<List<int>> loadWebBinary(String url) async {
   if (!url.contains('http:')) url = rootUrl + '/' + url;
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
-  HttpClientRequest request;
+  late HttpClientRequest request;
   try {
     request = await httpClient.openUrl('GET', uri);
   } catch (ex) {
-    log.error(ex);
+    log.error('$ex');
   }
   HttpClientResponse response = await request.close();
 //  HttpResponse responseBody = await response.transform(utf8.decoder).join();
@@ -109,7 +109,7 @@ Future<List<int>> loadWebBinary(String url) async {
   return download;
 } // of loadWebBinary
 
-Future<Image> loadWebImage(String url) async => decodeImage(await loadWebBinary(url));
+Future<Image?> loadWebImage(String url) async => decodeImage(await loadWebBinary(url));
 //Future<Image> loadWebImage(String url) async {
 //  if (!url.contains('http:')) url = rootUrl + '/' + url;
 //  final uri = Uri.parse(url);
@@ -136,7 +136,7 @@ Future<Image> loadWebImage(String url) async => decodeImage(await loadWebBinary(
 //}
 
 Future<void> saveWebImage(String urlString,
-    {Image image, int quality = 100, String metaData}) async {
+    {Image? image, int quality = 100, String? metaData}) async {
   try {
     var postUri = Uri.parse(urlString);
     List<int> payLoad;

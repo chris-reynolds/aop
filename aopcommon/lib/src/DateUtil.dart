@@ -91,7 +91,7 @@ DateTime parseDMY(String inputStr, {bool allowYearOnly = false}) {
   return DateTime.parse(workStr);
 } // parseDMY
 
-DateTime dateTimeFromExif(String exifString) {
+DateTime? dateTimeFromExif(String exifString) {
   try {
     String tmp =
         '${exifString.substring(0, 4)}-${exifString.substring(5, 7)}-${exifString.substring(8)}';
@@ -101,5 +101,5 @@ DateTime dateTimeFromExif(String exifString) {
   } // of try catch
 } // dateTimeFromExif
 
-String dbDate(DateTime aDate) =>
+String? dbDate(DateTime aDate) =>
     (aDate == null) ? null : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');

@@ -5,7 +5,7 @@ import 'package:exif/exif.dart' as exif;
 import 'package:aopcommon/aopcommon.dart';
 
 class JpegLoader {
-  static const UNKNOWN_LONGLAT = null;
+  static const dynamic UNKNOWN_LONGLAT = null;
 
   Map<String, dynamic> tags = <String, dynamic>{};
 
@@ -53,7 +53,7 @@ class JpegLoader {
     return result.trim();
   } // of cleanString
 
-  double dmsToDeg(List/*?*/ dms, String direction) {
+  double? dmsToDeg(List? dms, String direction) {
     if (dms == null) return UNKNOWN_LONGLAT;
     double result = 0.0;
     for (int ix in [2, 1, 0]) {
@@ -65,7 +65,7 @@ class JpegLoader {
     return result;
   } // of dmsToDeg
 
-  DateTime dateTimeFromExif(String exifString) {
+  DateTime? dateTimeFromExif(String exifString) {
     try {
       String tmp = exifString.substring(0, 4) +
           '-' +
