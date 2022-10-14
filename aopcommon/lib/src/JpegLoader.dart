@@ -53,7 +53,7 @@ class JpegLoader {
     return result.trim();
   } // of cleanString
 
-  double dmsToDeg(List dms, String direction) {
+  double dmsToDeg(List/*?*/ dms, String direction) {
     if (dms == null) return UNKNOWN_LONGLAT;
     double result = 0.0;
     for (int ix in [2, 1, 0]) {

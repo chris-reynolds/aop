@@ -34,17 +34,17 @@ class _Log {
   void error(String s) {
     onError(' $s');
   }
-  String _logFilename;
+  String _logFilename ='';
   set logFilename(String s) {_logFilename=s;}
 
     Future<void> save() async  {
-      if (_logFilename==null) return;
+      if (_logFilename.isEmpty) return;
       IOSink fl = File(_logFilename).openWrite();
       fl.writeAll(_logHistory,'\n');
       await fl.close();
     }
     Future<void> load() async {
-      if (_logFilename==null) throw 'No log Filename';
+      if (_logFilename.isEmpty) throw 'No log Filename';
       _logHistory = await File(_logFilename).readAsLines();
     }
 

@@ -13,9 +13,9 @@ class MapWithDirty with MapMixin<String, dynamic> {
   @override
   void clear() => _map.clear();
   @override
-  void remove(Object key) => _map.remove(key);
+  void remove(Object/*!*/ key) => _map.remove(key);
   @override
-  dynamic operator [](Object key) => _map[key];
+  dynamic operator [](Object/*!*/ key) => _map[key];
   @override
   operator []=(Object key, dynamic value) {
     if (_map[key] == value) return;

@@ -31,7 +31,7 @@ class WebFile {
   }
 } // of webFile
 
-Future<WebFile> loadWebFile(String url, String defaultValue,{int timeOut = 10}) async {
+Future<WebFile> loadWebFile(String url, String/*?*/ defaultValue,{int timeOut = 10}) async {
   if (!url.contains('http:')) url = rootUrl + '/' + url;
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
@@ -159,8 +159,8 @@ Future<void> saveWebImage(String urlString,
       throw Exception('Failed to upload $urlString with $response');
     }
     payLoad = [];  // clear in case this is the memory leak
-    response = null;
-    httpClient = null;
+ //   response = null;
+ //   httpClient = null;
   } catch(ex,st) {
     throw Exception('Failed to save web image $urlString with $ex \n $st');
   }

@@ -12,7 +12,7 @@ import 'Logger.dart';
 class GeocodingSession {
   static const String _host =
       'https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14';
-  static double calcSign(String direction, double magnitude) {
+  static double calcSign(String/*?*/ direction, double magnitude) {
     if (direction == null) {      
             return magnitude;
     if ('SWsw'.contains(direction))
