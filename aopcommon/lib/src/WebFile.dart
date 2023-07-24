@@ -8,6 +8,7 @@
 */
 import 'dart:io';
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:image/image.dart';
 import 'package:aopcommon/aopcommon.dart';
 
@@ -85,7 +86,7 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
   return true;
 } // of saveWebFile
 
-Future<List<int>> loadWebBinary(String url) async {
+Future<Uint8List> loadWebBinary(String url) async {
   if (!url.contains('http:')) url = rootUrl + '/' + url;
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
@@ -106,7 +107,7 @@ Future<List<int>> loadWebBinary(String url) async {
       download.addAll(chunk);
     });
   });
-  return download;
+  return Uint8List.fromList(download);
 } // of loadWebBinary
 
 Future<Image?> loadWebImage(String url) async => decodeImage(await loadWebBinary(url));

@@ -101,5 +101,5 @@ DateTime? dateTimeFromExif(String exifString) {
   } // of try catch
 } // dateTimeFromExif
 
-String? dbDate(DateTime aDate) =>
+String? dbDate(DateTime? aDate) =>
     (aDate == null) ? null : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');
