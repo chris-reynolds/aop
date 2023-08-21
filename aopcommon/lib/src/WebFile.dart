@@ -8,12 +8,11 @@
 */
 import 'dart:io';
 import 'dart:convert';
+import 'dart:typed_data';
 import 'package:image/image.dart';
 import 'package:aopcommon/aopcommon.dart';
 
 String get rootUrl => 'http://${config["dbhost"]}:3333';
-
-
 
 class WebFile {
   String url;
@@ -24,14 +23,15 @@ class WebFile {
   static Future<bool> get hasWebServer async {
     try {
       var response = await loadWebFile('', 'blah');
-      return (response.contents=='blah');
-    } catch(ex) {
+      return (response.contents == 'blah');
+    } catch (ex) {
       return false;
     }
   }
 } // of webFile
 
-Future<WebFile> loadWebFile(String url, String? defaultValue,{int timeOut = 10}) async {
+Future<WebFile> loadWebFile(String url, String? defaultValue,
+    {int timeOut = 10}) async {
   if (!url.contains('http:')) url = rootUrl + '/' + url;
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
@@ -41,7 +41,8 @@ Future<WebFile> loadWebFile(String url, String? defaultValue,{int timeOut = 10})
   } catch (ex) {
     log.error('$ex');
   }
-  HttpClientResponse response = await request.close().timeout(Duration(seconds:timeOut));
+  HttpClientResponse response =
+      await request.close().timeout(Duration(seconds: timeOut));
 //  HttpResponse responseBody = await response.transform(utf8.decoder).join();
   //   print("Received $responseBody...");
   httpClient.close();
@@ -74,7 +75,8 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
     httpClient.close();
     if (response.statusCode != 200) throw response.reasonPhrase;
   } catch (ex) {
-    String errMessage = 'Failed to save ${webFile.url} with reason ${response.reasonPhrase}';
+    String errMessage =
+        'Failed to save ${webFile.url} with reason ${response.reasonPhrase}';
     log.error(errMessage);
     if (silent) {
       return false;
@@ -109,7 +111,8 @@ Future<List<int>> loadWebBinary(String url) async {
   return download;
 } // of loadWebBinary
 
-Future<Image?> loadWebImage(String url) async => decodeImage(await loadWebBinary(url));
+Future<Image?> loadWebImage(String url) async =>
+    decodeImage(Uint8List.fromList(await loadWebBinary(url)));
 //Future<Image> loadWebImage(String url) async {
 //  if (!url.contains('http:')) url = rootUrl + '/' + url;
 //  final uri = Uri.parse(url);
@@ -149,7 +152,7 @@ Future<void> saveWebImage(String urlString,
       payLoad = utf8.encode(metaData);
       request.add(payLoad);
     }
-    var response = await request.close().timeout(Duration(seconds:20));
+    var response = await request.close().timeout(Duration(seconds: 20));
     bool successfulResponse = (response.statusCode == 200);
     await response.drain();
     httpClient.close();
@@ -158,10 +161,10 @@ Future<void> saveWebImage(String urlString,
     } else {
       throw Exception('Failed to upload $urlString with $response');
     }
-    payLoad = [];  // clear in case this is the memory leak
- //   response = null;
- //   httpClient = null;
-  } catch(ex,st) {
+    payLoad = []; // clear in case this is the memory leak
+    //   response = null;
+    //   httpClient = null;
+  } catch (ex, st) {
     throw Exception('Failed to save web image $urlString with $ex \n $st');
   }
 } // of httpPostImage

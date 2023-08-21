@@ -13,10 +13,7 @@ class GeocodingSession {
   static const String _host =
       'https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=14';
   static double calcSign(String? direction, double magnitude) {
-    if (direction == null) {      
-            return magnitude;
-    if ('SWsw'.contains(direction!))
-      magnitude = - magnitude;
+    if (direction == null) {
       return magnitude;
     }
     return ('SsWw'.contains(direction)) ? -magnitude : magnitude;
@@ -32,7 +29,7 @@ class GeocodingSession {
     return '$longTiles:$latTiles';
   } // of _calcKey
 
-  final Map<String, String?> _cache = <String,String?>{};
+  final Map<String, String?> _cache = <String, String?>{};
 
   int get length => _cache.length;
 
@@ -46,14 +43,15 @@ class GeocodingSession {
   } // of getLocation
 
   String removeDiacritics(String str) {
-    String withDia = 'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽžĀāĒēĪīŌōŪūþ';
-    String withoutDia = 'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZzAaEeIiOoUup';
+    String withDia =
+        'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽžĀāĒēĪīŌōŪūþ';
+    String withoutDia =
+        'AAAAAAaaaaaaOOOOOOOooooooEEEEeeeeeCcDIIIIiiiiUUUUuuuuNnSsYyyZzAaEeIiOoUup';
     for (int i = 0; i < withDia.length; i++) {
       str = str.replaceAll(withDia[i], withoutDia[i]);
     }
     return str;
   } // of removeDiacritics
-
 
   void setLocation(double longitude, double latitude, String location) {
     final String key = _calcKey(longitude, latitude);
@@ -75,7 +73,7 @@ class GeocodingSession {
     HttpClientResponse response = await request.close();
     String responseBody = await response.transform(utf8.decoder).join();
     //   print("Received $responseBody...");
-    Map<String,dynamic> data = jsonDecode(responseBody);
+    Map<String, dynamic> data = jsonDecode(responseBody);
     httpClient.close();
     String? result = data['display_name'];
     if (result != null) {
@@ -85,5 +83,4 @@ class GeocodingSession {
       return null;
     }
   } // of urlLookupFromCoordinates
-
 } // of GeocodingSession

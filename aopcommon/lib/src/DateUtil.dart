@@ -6,12 +6,28 @@
 // ignore_for_file: omit_local_variable_types
 import 'package:aopcommon/aopcommon.dart';
 
-const List<int> _daysInMonth = <int>[0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-final List<String> _monthNames = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
+const List<int> _daysInMonth = <int>[
+  0,
+  31,
+  28,
+  31,
+  30,
+  31,
+  30,
+  31,
+  31,
+  30,
+  31,
+  30,
+  31
+];
+final List<String> _monthNames =
+    'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ');
 
 int _iMin(int x, int y) => (x < y) ? x : y;
 
-bool isLeapYear(int value) => value % 400 == 0 || (value % 4 == 0 && value % 100 != 0);
+bool isLeapYear(int value) =>
+    value % 400 == 0 || (value % 4 == 0 && value % 100 != 0);
 
 int daysInMonth(int year, int month) {
   int result = _daysInMonth[month];
@@ -30,11 +46,11 @@ DateTime addMonths(DateTime dt, int value) {
   }
   int newDay = _iMin(dt.day, daysInMonth(newYear, newMonth));
   if (dt.isUtc) {
-    return DateTime.utc(
-        newYear, newMonth, newDay, dt.hour, dt.minute, dt.second, dt.millisecond, dt.microsecond);
+    return DateTime.utc(newYear, newMonth, newDay, dt.hour, dt.minute,
+        dt.second, dt.millisecond, dt.microsecond);
   } else {
-    return DateTime(
-        newYear, newMonth, newDay, dt.hour, dt.minute, dt.second, dt.millisecond, dt.microsecond);
+    return DateTime(newYear, newMonth, newDay, dt.hour, dt.minute, dt.second,
+        dt.millisecond, dt.microsecond);
   }
 } // addMonth
 
@@ -101,5 +117,6 @@ DateTime? dateTimeFromExif(String exifString) {
   } // of try catch
 } // dateTimeFromExif
 
-String? dbDate(DateTime aDate) =>
-    (aDate == null) ? null : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');
+String? dbDate(DateTime? aDate) => (aDate == null)
+    ? null
+    : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');
