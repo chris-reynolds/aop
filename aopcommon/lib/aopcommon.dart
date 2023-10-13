@@ -5,7 +5,7 @@
 library aopcommon;
 
 export 'src/aopcommon_base.dart';
-export 'src/Config.dart';
+// export 'src/Config.dart';
 export 'src/DateUtil.dart';
 export 'src/Geocoding.dart';
 export 'src/JpegLoader.dart';

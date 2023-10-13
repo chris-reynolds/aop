@@ -35,23 +35,41 @@ void dateTests() {
     expect(afterDate, equals(addMonths(startDate, 16)));
   });
   test('daysInMonth', () {
-    expect(28,equals(daysInMonth(2013,2)));
-    expect(31,equals(daysInMonth(2013,12)));
-    expect(29,equals(daysInMonth(2016,2)));
-    expect(30,equals(daysInMonth(2016,11)));
+    expect(28, equals(daysInMonth(2013, 2)));
+    expect(31, equals(daysInMonth(2013, 12)));
+    expect(29, equals(daysInMonth(2016, 2)));
+    expect(30, equals(daysInMonth(2016, 11)));
   });
   test('dbDate', () {
-    DateTime dy = DateTime(2020,1,2,3,4,5,6,7,);
+    DateTime dy = DateTime(
+      2020,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+    );
     String target = '2020-01-02 03:04:05.006';
-    expect(target,equals(dbDate(dy)));
+    expect(target, equals(dbDate(dy)));
     //  dbDate(DateTime dt)
   });
   test('formatDate', () {
     //  formatDate(DateTime aDate, {String format = 'yyyy-mm-d'})
-    DateTime dy = DateTime(2020,1,2,3,4,5,6,7,);
-   // String target = '2020-01-02 03:04:05.006';
-    expect('2020-01-2',equals(formatDate(dy)));
-    expect('2020-01-02',equals(formatDate(dy,format:'yyyy-mm-dd')));
+    DateTime dy = DateTime(
+      2020,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+    );
+    // String target = '2020-01-02 03:04:05.006';
+    expect('2020-01-2', equals(formatDate(dy)));
+    expect('2020-01-02', equals(formatDate(dy, format: 'yyyy-mm-dd')));
   });
   test('parseDMY', () {
     //  parseDMY(String inputStr, {bool allowYearOnly = false})
@@ -60,3 +78,6 @@ void dateTests() {
     //  dateTimeFromExif(String exifString)
   });
 } // of dateTests
+
+
+

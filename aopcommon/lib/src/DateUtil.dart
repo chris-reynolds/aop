@@ -120,3 +120,8 @@ DateTime? dateTimeFromExif(String exifString) {
 String? dbDate(DateTime? aDate) => (aDate == null)
     ? null
     : formatDate(aDate, format: 'yyyy-mm-dd hh:nn:ss.lll');
+
+DateTime? fromDbDate(String? strDate) =>
+    (strDate == null || strDate.toLowerCase() == 'null')
+        ? null
+        : DateTime.parse(strDate);
