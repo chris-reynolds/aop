@@ -22,3 +22,5 @@ doc/api/
 pyaopserver/Include/
 pyaopserver/Lib/
 pyaopserver/Scripts/
+aopcommon/.vscode/launch.json
+aopcommon/lib/src/Configxx2.dart

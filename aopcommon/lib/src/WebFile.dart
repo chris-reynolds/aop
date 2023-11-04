@@ -7,6 +7,8 @@
 
 */
 import 'dart:io';
+
+import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:image/image.dart';
@@ -35,32 +37,37 @@ class WebFile {
 
 Future<WebFile> loadWebFile(String url, String? defaultValue,
     {int timeOut = 10}) async {
-  if (!url.contains('http:')) {
+  if (!url.contains('http')) {
     if (WebFile._rootUrl == '') throw Exception('No rootUrl');
-    url = '${WebFile._rootUrl}/$url';
+    url = '${WebFile._rootUrl}$url';
   }
-
+  log.message('loading webfile $url');
   final uri = Uri.parse(url);
-  var httpClient = HttpClient();
-  late HttpClientRequest request;
+  var httpClient = http.Client();
+//  late http.Request request;
+  late http.Response response;
   try {
-    request = await httpClient.openUrl('GET', uri);
+    response = await httpClient.get(uri).timeout(Duration(seconds: timeOut));
+    if (response.statusCode > 399)
+      throw Exception('Response ${response.statusCode} \n ${response.body}');
+    log.message('Response Code ${response.statusCode}');
   } catch (ex) {
-    log.error('$ex');
+    log.error('webfile error : $ex');
   }
-  HttpClientResponse response =
-      await request.close().timeout(Duration(seconds: timeOut));
+  // http.Response response =
+  //     await request.close().timeout(Duration(seconds: timeOut));
 //  HttpResponse responseBody = await response.transform(utf8.decoder).join();
   //   print("Received $responseBody...");
-  httpClient.close();
+  // httpClient.close();
   WebFile result = WebFile._(url);
   if (response.statusCode != 200) {
     if (defaultValue == null) throw 'Failed to load ' + url;
     result.contents = defaultValue;
   } else {
-    await utf8.decoder.bind(response).forEach((String x) {
-      result.contents += x;
-    });
+    result.contents = response.body;
+//    await utf8.decoder.bind(response.bodyBytes).forEach((String x) {
+//      result.contents += x;
+//    });
   }
   return result;
 }
@@ -97,7 +104,7 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
 Future<Uint8List> loadWebBinary(String url) async {
   if (!url.contains('http:')) {
     if (WebFile._rootUrl == '') throw Exception('No rootUrl');
-    url = '${WebFile._rootUrl}/{url}';
+    url = '${WebFile._rootUrl}{url}';
   }
   final uri = Uri.parse(url);
   var httpClient = HttpClient();
@@ -129,7 +136,7 @@ Future<void> saveWebImage(String url,
   try {
     if (!url.contains('http:')) {
       if (WebFile._rootUrl == '') throw Exception('No rootUrl');
-      url = '${WebFile._rootUrl}/{url}';
+      url = '${WebFile._rootUrl}$url';
     }
     var postUri = Uri.parse(url);
     List<int> payLoad;
