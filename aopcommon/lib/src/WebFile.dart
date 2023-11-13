@@ -53,6 +53,7 @@ Future<WebFile> loadWebFile(String url, String? defaultValue,
     log.message('Response Code ${response.statusCode}');
   } catch (ex) {
     log.error('webfile error : $ex');
+    rethrow;
   }
   // http.Response response =
   //     await request.close().timeout(Duration(seconds: timeOut));
