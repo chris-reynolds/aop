@@ -18,6 +18,8 @@ class WebFile {
   String url;
   String contents = '';
   static String _rootUrl = ''; //'http://${config["host"]}:${config['port']}';
+  // ignore: prefer_final_fields
+  static String _preserve = '{"jam":"45556"}'; // TODO $modelSessionid
   static String get rootUrl => _rootUrl;
   static void setRootUrl(String rootUrl) {
     _rootUrl = rootUrl;
@@ -27,8 +29,8 @@ class WebFile {
 
   static Future<bool> get hasWebServer async {
     try {
-      var response = await loadWebFile('', 'blah');
-      return (response.contents == 'blah');
+      var response = await loadWebFile('tagList.txt', 'blah');
+      return (response.contents != 'blah');
     } catch (ex) {
       return false;
     }
@@ -48,8 +50,9 @@ Future<WebFile> loadWebFile(String url, String? defaultValue,
   late http.Response response;
   try {
     response = await httpClient.get(uri).timeout(Duration(seconds: timeOut));
-    if (response.statusCode > 399)
+    if (response.statusCode > 399) {
       throw Exception('Response ${response.statusCode} \n ${response.body}');
+    }
     log.message('Response Code ${response.statusCode}');
   } catch (ex) {
     log.error('webfile error : $ex');
@@ -74,24 +77,30 @@ Future<WebFile> loadWebFile(String url, String? defaultValue,
 }
 
 Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
-  late HttpClientResponse response;
   try {
     final uri = Uri.parse(webFile.url);
-    var httpClient = HttpClient();
-    HttpClientRequest request;
+    var httpClient = http.Client();
+    Map<String, String> headers = {
+      'Accept': 'application/json',
+      'Content-type': 'application/json',
+      'Preserve': '${WebFile._preserve}'
+    };
+    http.Response? response;
     try {
-      request = await httpClient.openUrl('PUT', uri);
-      request.write(webFile.contents);
+      response =
+          await httpClient.put(uri, headers: headers, body: webFile.contents);
     } catch (ex) {
       log.error('$ex');
       return false;
     }
-    response = await request.close();
-    httpClient.close();
-    if (response.statusCode != 200) throw response.reasonPhrase;
+    // if (response == null) {
+    //   throw 'No response from server when putting ${webFile.url}';
+    // }
+    if (response.statusCode != 200) {
+      throw throw 'Response ${response.statusCode} from server when putting ${webFile.url}';
+    }
   } catch (ex) {
-    String errMessage =
-        'Failed to save ${webFile.url} with reason ${response.reasonPhrase}';
+    String errMessage = 'Failed to save ${webFile.url} with reason $ex';
     log.error(errMessage);
     if (silent) {
       return false;
