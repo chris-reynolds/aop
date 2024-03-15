@@ -14,3 +14,4 @@ export 'src/ListUtils.dart';
 export 'src/Logger.dart';
 export 'src/StringUtils.dart';
 export 'src/WebFile.dart';
+export 'src/PathUtils.dart';

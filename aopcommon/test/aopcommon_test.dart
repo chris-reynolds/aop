@@ -1,11 +1,14 @@
 // ignore_for_file: omit_local_variable_types
 
+import 'dart:io';
+
 import 'package:aopcommon/aopcommon.dart';
 import 'package:test/test.dart';
 
 void main() {
   group('String Tests', stringTests);
   group('Date Tests', dateTests);
+  group('Path Tests', pathTests);
 }
 
 void stringTests() {
@@ -79,5 +82,17 @@ void dateTests() {
   });
 } // of dateTests
 
-
-
+void pathTests() {
+  test('onlyFilenameWin', () {
+    expect('fred.jpg', equals(onlyFileName('bill\\jim\\fred.jpg')));
+  });
+  test('onlyDirectoryWin', () {
+    expect('bill\\jim', equals(onlyDirectory('bill\\jim\\fred.jpg')));
+  });
+  test('onlyFilenameLinux', () {
+    expect('fred.jpg', equals(onlyFileName('bill/jim/fred.jpg')));
+  });
+  test('onlyDirectoryLinux', () {
+    expect('bill/jim', equals(onlyDirectory('bill/jim/fred.jpg')));
+  });
+}
