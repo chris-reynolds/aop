@@ -2,6 +2,5 @@
 import 'package:aopcommon/aopcommon.dart';
 
 void main() {
-
-  log.message('hello world:');
+  log.debug('hello world from aopcommon main():');
 }

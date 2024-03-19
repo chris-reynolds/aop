@@ -19,7 +19,11 @@ class WebFile {
   String contents = '';
   static String _rootUrl = ''; //'http://${config["host"]}:${config['port']}';
   // ignore: prefer_final_fields
-  static String _preserve = '{"jam":"45556"}'; // TODO $modelSessionid
+  static String _preserve = '';
+  static void setPreserve(String preserve) {
+    _preserve = preserve;
+  }
+
   static String get rootUrl => _rootUrl;
   static void setRootUrl(String rootUrl) {
     _rootUrl = rootUrl;
@@ -53,7 +57,7 @@ Future<WebFile> loadWebFile(String url, String? defaultValue,
     if (response.statusCode > 399) {
       throw Exception('Response ${response.statusCode} \n ${response.body}');
     }
-    log.message('Response Code ${response.statusCode}');
+    log.debug('Response Code ${response.statusCode}');
   } catch (ex) {
     log.error('webfile error : $ex');
     rethrow;
@@ -80,13 +84,15 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
   try {
     final uri = Uri.parse(webFile.url);
     var httpClient = http.Client();
-    Map<String, String> headers = {
-      'Accept': 'application/json',
-      'Content-type': 'application/json',
-      'Preserve': '${WebFile._preserve}'
-    };
     http.Response? response;
     try {
+      if (WebFile._preserve == '')
+        throw Exception('Cannot preserve ${webFile.url}');
+      Map<String, String> headers = {
+        'Accept': 'application/json',
+        'Content-type': 'application/json',
+        'Preserve': '${WebFile._preserve}'
+      };
       response =
           await httpClient.put(uri, headers: headers, body: webFile.contents);
     } catch (ex) {
@@ -164,7 +170,7 @@ Future<void> saveWebImage(String url,
     await response.drain();
     httpClient.close();
     if (successfulResponse) {
-      log.message('Uploaded $url');
+      log.debug('Uploaded $url');
     } else {
       throw Exception('Failed to upload $url with $response');
     }

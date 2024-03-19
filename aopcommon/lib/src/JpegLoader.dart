@@ -44,7 +44,6 @@ class JpegLoader {
     if (tags.containsKey('MakerNote')) {
       tags.remove('MakerNote');
     }
-//    Log.message('tags length= ${tags.length}');
   }
 
   String cleanString(String s) {
@@ -82,12 +81,11 @@ class JpegLoader {
     dynamic result;
     tagName = tagName.toLowerCase();
     tags.forEach((String key, value) {
-      if (key.toLowerCase() == tagName || key.toLowerCase() == 'image $tagName') {
+      if (key.toLowerCase() == tagName ||
+          key.toLowerCase() == 'image $tagName') {
         result = value;
       }
     });
-//      if (result == null)
-//        Log.message('++++++++++++++++tag $tagName not found');
     return result;
   }
 
