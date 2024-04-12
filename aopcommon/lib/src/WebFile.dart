@@ -6,10 +6,10 @@
   Purpose: 
 
 */
-import 'dart:io';
+// import 'dart:io';
 
 import 'package:http/http.dart' as http;
-import 'dart:convert';
+// import 'dart:convert';
 import 'dart:typed_data';
 import 'package:image/image.dart';
 import 'package:aopcommon/aopcommon.dart';
@@ -17,9 +17,11 @@ import 'package:aopcommon/aopcommon.dart';
 class WebFile {
   String url;
   String contents = '';
+  Uint8List? bodyBytes;
   static String _rootUrl = ''; //'http://${config["host"]}:${config['port']}';
   // ignore: prefer_final_fields
   static String _preserve = '';
+  static String get preserve => _preserve;
   static void setPreserve(String preserve) {
     _preserve = preserve;
   }
@@ -62,20 +64,14 @@ Future<WebFile> loadWebFile(String url, String? defaultValue,
     log.error('webfile error : $ex');
     rethrow;
   }
-  // http.Response response =
-  //     await request.close().timeout(Duration(seconds: timeOut));
-//  HttpResponse responseBody = await response.transform(utf8.decoder).join();
-  //   print("Received $responseBody...");
-  // httpClient.close();
   WebFile result = WebFile._(url);
   if (response.statusCode != 200) {
     if (defaultValue == null) throw 'Failed to load ' + url;
     result.contents = defaultValue;
   } else {
     result.contents = response.body;
-//    await utf8.decoder.bind(response.bodyBytes).forEach((String x) {
-//      result.contents += x;
-//    });
+    result.bodyBytes = response.bodyBytes;
+    log.message('webfile loaded ${result.bodyBytes!.length} bytes');
   }
   return result;
 }
@@ -99,9 +95,6 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
       log.error('$ex');
       return false;
     }
-    // if (response == null) {
-    //   throw 'No response from server when putting ${webFile.url}';
-    // }
     if (response.statusCode != 200) {
       throw throw 'Response ${response.statusCode} from server when putting ${webFile.url}';
     }
@@ -118,66 +111,41 @@ Future<bool> saveWebFile(WebFile webFile, {bool silent = true}) async {
 } // of saveWebFile
 
 Future<Uint8List> loadWebBinary(String url) async {
-  if (!url.contains('http:')) {
-    if (WebFile._rootUrl == '') throw Exception('No rootUrl');
-    url = '${WebFile._rootUrl}{url}';
-  }
-  final uri = Uri.parse(url);
-  var httpClient = HttpClient();
-  late HttpClientRequest request;
-  try {
-    request = await httpClient.openUrl('GET', uri);
-  } catch (ex) {
-    log.error('$ex');
-  }
-  HttpClientResponse response = await request.close();
-//  HttpResponse responseBody = await response.transform(utf8.decoder).join();
-  //   print("Received $responseBody...");
-  httpClient.close();
-  if (response.statusCode != 200) throw 'Failed to load ' + url;
-  List<int> download = <int>[];
-  await response.toList().then((List<List<int>> chunks) {
-    chunks.forEach((List<int> chunk) {
-      download.addAll(chunk);
-    });
-  });
-  return Uint8List.fromList(download);
+  WebFile webFile = await loadWebFile(url, '');
+  return webFile.bodyBytes!;
 } // of loadWebBinary
 
-Future<Image?> loadWebImage(String url) async =>
-    decodeImage(Uint8List.fromList(await loadWebBinary(url)));
+Future<Image?> loadWebImage(String url) async {
+  var bin = await loadWebBinary(url);
+  var img = decodeImage(bin);
+  return img;
+}
 
-Future<void> saveWebImage(String url,
-    {Image? image, int quality = 100, String? metaData}) async {
-  try {
-    if (!url.contains('http:')) {
-      if (WebFile._rootUrl == '') throw Exception('No rootUrl');
-      url = '${WebFile._rootUrl}$url';
-    }
-    var postUri = Uri.parse(url);
-    List<int> payLoad;
-    HttpClient httpClient = HttpClient();
-    var request = await httpClient.putUrl(postUri);
-    if (image != null) {
-      payLoad = encodeJpg(image, quality: quality);
-      request.add(payLoad);
-    } else if (metaData != null) {
-      payLoad = utf8.encode(metaData);
-      request.add(payLoad);
-    }
-    var response = await request.close().timeout(Duration(seconds: 20));
-    bool successfulResponse = (response.statusCode == 200);
-    await response.drain();
-    httpClient.close();
-    if (successfulResponse) {
-      log.debug('Uploaded $url');
-    } else {
-      throw Exception('Failed to upload $url with $response');
-    }
-    payLoad = []; // clear in case this is the memory leak
-    //   response = null;
-    //   httpClient = null;
-  } catch (ex, st) {
-    throw Exception('Failed to save web image $url with $ex \n $st');
-  }
-} // of httpPostImage
+// Future<String> uploadImage3(String imageName, DateTime modifiedDate,
+//     String filename, String filePath, String importSource) async {
+//   try {
+//     String fileDateStr =
+//         formatDate(modifiedDate, format: 'yyyy:mm:dd hh:nn:ss');
+//     var postUrl =
+//         "${WebFile._rootUrl}upload2/$fileDateStr/$imageName/$importSource";
+//     var request = http.MultipartRequest("POST", Uri.parse(postUrl));
+//     request.headers.addAll(
+//         {'Accept': 'application/json', 'Preserve': '${WebFile._preserve}'});
+//     request.files.add(http.MultipartFile.fromBytes('myfile', fileContents,
+//         contentType: MediaType('image', 'jpeg')));
+//     // request.files.add(await http.MultipartFile.fromPath('myfile', filePath));
+//     var response = await request.send();
+//     var responseBody = await response.stream.bytesToString();
+//     if (response.statusCode == 200) {
+//       log.debug("Uploaded $imageName");
+//       return "OK: $responseBody";
+//     } else {
+//       log.error(
+//           'Failed to upload $imageName  - code ${response.statusCode}\n $responseBody');
+//       return "Error: $imageName \n reason: $responseBody"; // signal error
+//     }
+//   } catch (ex, st) {
+//     log.error('$ex\n$st');
+//     return "Error $imageName exception \n reason: '$ex\n$st"; // signal error
+//   }
+// } //of uploadImageFile
